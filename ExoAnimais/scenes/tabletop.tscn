@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxce77o470wys"]
+
+[ext_resource type="Script" uid="uid://bquwyloelw3yb" path="res://tabletop.gd" id="1_75rrl"]
+[ext_resource type="Texture2D" uid="uid://cmyampfsqh8k7" path="res://icon.svg" id="2_osl0y"]
+[ext_resource type="Texture2D" uid="uid://c4fyoe1e6shbv" path="res://assets/ui/Tabletop.png" id="3_7obph"]
+[ext_resource type="Script" uid="uid://catoqbkm8xnyg" path="res://scenes/character_body_2d.gd" id="3_osl0y"]
+[ext_resource type="Script" uid="uid://c7xakgp2t2tts" path="res://scenes/camera_2d.gd" id="4_7obph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbcxj"]
+
+[node name="Tabletop" type="Node2D"]
+script = ExtResource("1_75rrl")
+
+[node name="Tabletop" type="Sprite2D" parent="."]
+position = Vector2(-33, -25)
+texture = ExtResource("3_7obph")
+
+[node name="WorldAppComponent" type="Node" parent="."]
+
+[node name="CameraComponent" type="Node" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_osl0y")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -800
+limit_top = -525
+limit_right = 735
+limit_bottom = 487
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("4_7obph")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("2_osl0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_rbcxj")
+
+[node name="PositionComponent" type="Node" parent="CharacterBody2D"]

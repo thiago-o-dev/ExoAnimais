@@ -9,7 +9,7 @@ var sprite_node_pos_tween: Tween
 
 func _physics_process(delta):
 	var direction: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
-	velocity = direction*SPEED*delta
+	velocity = direction*SPEED*delta*5
 	#if !sprite_node_pos_tween or !sprite_node_pos_tween.is_running():
 		#up, 
 

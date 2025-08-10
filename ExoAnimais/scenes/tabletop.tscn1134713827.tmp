@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxce77o470wys"]
+
+[ext_resource type="Texture2D" uid="uid://c4fyoe1e6shbv" path="res://assets/ui/Tabletop.png" id="3_7obph"]
+[ext_resource type="Script" uid="uid://catoqbkm8xnyg" path="res://src/character_body_2d.gd" id="3_osl0y"]
+[ext_resource type="Texture2D" uid="uid://ltpqv5geclht" path="res://assets/art/character.svg" id="3_rbcxj"]
+[ext_resource type="Script" uid="uid://c7xakgp2t2tts" path="res://src/camera_2d.gd" id="4_7obph"]
+[ext_resource type="Texture2D" uid="uid://cr2s7yuvi5lw2" path="res://assets/art/hat_safari.svg" id="4_ias0g"]
+[ext_resource type="Script" uid="uid://bmj2ohp3hy38b" path="res://src/render_path_2d_in_line_2d.gd" id="6_rbcxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbcxj"]
+
+[sub_resource type="Curve2D" id="Curve2D_ias0g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43, 56, 0, 0, 0, 0, 28, 137, 0, 0, 0, 0, -29, 256, 0, 0, 0, 0, -395, 298, 0, 0, 0, 0, -408, 261, 0, 0, 0, 0, -382, 189)
+}
+point_count = 7
+
+[node name="Tabletop" type="Node2D"]
+
+[node name="Tabletop" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(-33, -25)
+texture = ExtResource("3_7obph")
+
+[node name="WorldAppComponent" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 20, 0, 90, 50, 150, 0)
+width = 32.0
+default_color = Color(1, 0.867501, 0.55828, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Players"]
+script = ExtResource("3_osl0y")
+
+[node name="Body" type="Sprite2D" parent="Players/CharacterBody2D"]
+rotation = 0.0108932
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_rbcxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/CharacterBody2D"]
+visible = false
+shape = SubResource("CircleShape2D_rbcxj")
+
+[node name="PositionComponent" type="Node" parent="Players/CharacterBody2D"]
+
+[node name="HatSafari" type="Sprite2D" parent="Players/CharacterBody2D"]
+visible = false
+position = Vector2(0.5, -18)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ias0g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -800
+limit_top = -525
+limit_right = 735
+limit_bottom = 487
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("4_7obph")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ias0g")
+
+[node name="Line2D" type="Line2D" parent="Path2D"]
+script = ExtResource("6_rbcxj")

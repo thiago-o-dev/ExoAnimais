@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_key_pressed(KEY_C):
-		zoom = Vector2(2,2)
+		set_zoom(Vector2(2,2))
 	else:
-		zoom = Vector2(1,1)
+		set_zoom(Vector2(1,1))
+		

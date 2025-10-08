@@ -4,7 +4,6 @@ extends Line2D
 @export var path_node : Path2D
 @export var water_area_2d : Area2D
 
-
 func _draw():	
 	if path_node:
 		var baked_points : PackedVector2Array = path_node.curve.get_baked_points()

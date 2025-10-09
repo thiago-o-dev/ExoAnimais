@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq2ffxvwpag88"]
+
+[ext_resource type="Script" uid="uid://catoqbkm8xnyg" path="res://src/tile_character_body_2d.gd" id="1_ojdoj"]
+[ext_resource type="Texture2D" uid="uid://ltpqv5geclht" path="res://assets/art/character.svg" id="3_wa24v"]
+[ext_resource type="Texture2D" uid="uid://cr2s7yuvi5lw2" path="res://assets/art/hat_safari.svg" id="4_dgja0"]
+[ext_resource type="PackedScene" uid="uid://bwfsip1nbfkpi" path="res://components/position_component.tscn" id="4_ojdoj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbcxj"]
+
+[node name="TileCharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("position_component")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ojdoj")
+position_component = NodePath("PositionComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rbcxj")
+
+[node name="AppearenceComponent" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="AppearenceComponent"]
+modulate = Color(0.541176, 1, 0.552941, 1)
+rotation = 0.0108932
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_wa24v")
+
+[node name="HatSafari" type="Sprite2D" parent="AppearenceComponent"]
+position = Vector2(0.5, -18)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_dgja0")
+
+[node name="PositionComponent" parent="." node_paths=PackedStringArray("tileCharacterBody2D") instance=ExtResource("4_ojdoj")]
+tileCharacterBody2D = NodePath("..")

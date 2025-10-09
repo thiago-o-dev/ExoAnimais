@@ -43,12 +43,6 @@ point_count = 20
 
 [node name="Tabletop" type="Node2D"]
 
-[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("player_component", "tile_path_2D")]
-script = ExtResource("5_07fvr")
-player_component = NodePath("../PlayerComponent")
-player_quantity = 2
-tile_path_2D = NodePath("../TilePath2DComponent")
-
 [node name="Tabletop" type="Sprite2D" parent="."]
 texture_filter = 2
 position = Vector2(-33, -25)
@@ -127,6 +121,11 @@ mesh = SubResource("SphereMesh_jctoq")
 
 [node name="EndPosition" type="Marker2D" parent="TilePath2DComponent"]
 position = Vector2(554, 258)
+
+[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("player_component", "tile_path_2D")]
+script = ExtResource("5_07fvr")
+player_component = NodePath("../PlayerComponent")
+tile_path_2D = NodePath("../TilePath2DComponent")
 
 [node name="Scenery" type="Node2D" parent="."]
 
@@ -408,11 +407,11 @@ texture = ExtResource("12_60mk0")
 
 [node name="PlayerComponent" type="Node2D" parent="." node_paths=PackedStringArray("active_players", "active_player_indicator", "camera")]
 script = ExtResource("8_b7h01")
-active_players = [NodePath("Players/TileCharacterBody2D"), NodePath("Players/TileCharacterBody2D2")]
+active_players = [NodePath("Players/TileCharacterBody2D")]
 active_player_indicator = NodePath("ActivePlayerIndicator")
-camera = NodePath("TileCamera2D")
+camera = NodePath("Camera2D")
 
-[node name="TileCamera2D" type="Camera2D" parent="PlayerComponent"]
+[node name="Camera2D" type="Camera2D" parent="PlayerComponent"]
 position = Vector2(-379, 191)
 scale = Vector2(0.5, 0.5)
 limit_left = -800
@@ -428,11 +427,6 @@ zoom_speed = 5.0
 [node name="Players" type="Node2D" parent="PlayerComponent"]
 
 [node name="TileCharacterBody2D" parent="PlayerComponent/Players" node_paths=PackedStringArray("tile_path_component") instance=ExtResource("9_lup35")]
-position = Vector2(-374, 181)
-tile_path_component = NodePath("../../../TilePath2DComponent")
-
-[node name="TileCharacterBody2D2" parent="PlayerComponent/Players" node_paths=PackedStringArray("tile_path_component") instance=ExtResource("9_lup35")]
-modulate = Color(0.945496, 0.768132, 0.0268227, 1)
 position = Vector2(-374, 181)
 tile_path_component = NodePath("../../../TilePath2DComponent")
 

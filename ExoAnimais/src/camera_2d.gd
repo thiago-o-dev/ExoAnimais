@@ -1,17 +1,23 @@
 extends Camera2D
+class_name TileCamera2D
 
+@export var target_zoom = Vector2(2,2)
+@export var zoom_speed: float = 1
+@export var following_player : TileCharacterBody2D = null
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func set_to_follow(player_ref : TileCharacterBody2D):
+	following_player = player_ref
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	if Input.is_key_pressed(KEY_C):
-		set_zoom(Vector2(2,2))
+		target_zoom = Vector2(6,6)
 	elif Input.is_key_pressed(KEY_Z):
-		set_zoom(Vector2(.5,.5))
+		target_zoom = Vector2(2,2)
 	else:
-		set_zoom(Vector2(1,1))
+		target_zoom = Vector2(3,3)
+	
+	if following_player != null:
+		position = following_player.current_position
+	
+	zoom = zoom.lerp(target_zoom, zoom_speed * delta)
 		

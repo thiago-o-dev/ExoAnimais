@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwfsip1nbfkpi"]
+
+[ext_resource type="Script" uid="uid://bfusyrfjnrpy0" path="res://src/position_component.gd" id="1_27web"]
+
+[node name="PositionComponent" type="Node" node_paths=PackedStringArray("tileCharacterBody2D")]
+script = ExtResource("1_27web")
+tileCharacterBody2D = NodePath("")

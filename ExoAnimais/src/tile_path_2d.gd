@@ -27,18 +27,17 @@ func _ready():
 	
 	path_positions.append(end_position.position)
 	
+	var copy : PackedVector2Array = path_positions.slice(0, path_positions.size() - 1)
+	copy.reverse()
+	path_positions.append_array(copy)
+	
 	_log(path_positions)
 	queue_redraw()
 
 func _draw():
 	for pos in path_positions:
-		#draw_string_outline(SystemFont.new(), position, "2", HORIZONTAL_ALIGNMENT_CENTER,-1,10,1,Color.BLANCHED_ALMOND)
-		#draw_circle(pos, 2, Color.SADDLE_BROWN)
-		pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+		#draw_string_outline(SystemFont.new(), position, "2", HORIZONTAL_ALIGNMENT_CENTER,-1,16,1,Color.BLANCHED_ALMOND)
+		draw_circle(pos, 2, Color.SADDLE_BROWN)
 	
 func _log(text):
 	if debug:

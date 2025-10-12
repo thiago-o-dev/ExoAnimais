@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7l4duasi8y62"
-path="res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"
+uid="uid://byg25tnwvp50k"
+path="res://.godot/imported/dice_shadow.svg-8208721f401e3d4dbfc5d21eb7c13d70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Javali-Europeu/javali_europeu_card.svg"
-dest_files=["res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"]
+source_file="res://assets/ui/dice_shadow.svg"
+dest_files=["res://.godot/imported/dice_shadow.svg-8208721f401e3d4dbfc5d21eb7c13d70.ctex"]
 
 [params]
 
@@ -38,6 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=8.0
+svg/scale=0.5
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

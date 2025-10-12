@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7l4duasi8y62"
-path="res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"
+uid="uid://cd02fctqi5i6q"
+path="res://.godot/imported/card_inventory.svg-ff8dccde589d9ff2c8fffc3849bb3bcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Javali-Europeu/javali_europeu_card.svg"
-dest_files=["res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"]
+source_file="res://assets/ui/card_inventory.svg"
+dest_files=["res://.godot/imported/card_inventory.svg-ff8dccde589d9ff2c8fffc3849bb3bcb.ctex"]
 
 [params]
 

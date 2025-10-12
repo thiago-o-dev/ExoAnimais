@@ -1,0 +1,26 @@
+<svg width="662" height="160" viewBox="0 0 662 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_62_200)">
+<rect x="-58" width="716" height="152" rx="45" fill="#5D1C0F"/>
+<rect x="-56.5" y="1.5" width="713" height="149" rx="43.5" stroke="#5D1C0F" stroke-width="3"/>
+</g>
+<rect x="58.5" y="1.5" width="149" height="149" rx="43.5" fill="#795A1F" stroke="#5D1C0F" stroke-width="3"/>
+<rect x="207.5" y="1.5" width="149" height="149" rx="43.5" fill="#795A1F" stroke="#5D1C0F" stroke-width="3"/>
+<rect x="357.5" y="1.5" width="149" height="149" rx="43.5" fill="#795A1F" stroke="#5D1C0F" stroke-width="3"/>
+<rect x="507.5" y="1.5" width="149" height="149" rx="43.5" fill="#795A1F" stroke="#5D1C0F" stroke-width="3"/>
+<rect x="64.5" y="7.5" width="137" height="137" rx="43.5" fill="#B7872F" stroke="#A47B2F" stroke-width="3"/>
+<rect x="213.5" y="7.5" width="137" height="137" rx="43.5" fill="#B7872F" stroke="#A47B2F" stroke-width="3"/>
+<rect x="363.5" y="7.5" width="137" height="137" rx="43.5" fill="#B7872F" stroke="#A47B2F" stroke-width="3"/>
+<rect x="513.5" y="7.5" width="137" height="137" rx="43.5" fill="#B7872F" stroke="#A47B2F" stroke-width="3"/>
+<defs>
+<filter id="filter0_d_62_200" x="-62" y="0" width="724" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_62_200"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_62_200" result="shape"/>
+</filter>
+</defs>
+</svg>

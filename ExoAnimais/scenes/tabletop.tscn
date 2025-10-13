@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bxce77o470wys"]
+[gd_scene load_steps=33 format=3 uid="uid://bxce77o470wys"]
 
 [ext_resource type="Texture2D" uid="uid://3gnm2yhta7xp" path="res://assets/ui/Tabletop.svg" id="1_jctoq"]
 [ext_resource type="Script" uid="uid://cs5gt8eogh1ax" path="res://src/tile_path_2d.gd" id="2_jctoq"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d4gxxvdkq6sth" path="res://assets/art/Animais/Lagartixa_Domestica/text_lagartixa_domestica.svg" id="21_wt2mi"]
 [ext_resource type="Texture2D" uid="uid://b7sbv5qqg7a06" path="res://assets/art/Animais/Javali-Europeu/sucesso/sucesso.svg" id="22_wt2mi"]
 [ext_resource type="Script" uid="uid://2lajh1f3gj5h" path="res://src/object_group.gd" id="24_6jgqd"]
+[ext_resource type="Script" uid="uid://bv1ogrc6ijrfr" path="res://src/objects_manager.gd" id="24_x3asg"]
 
 [sub_resource type="Curve2D" id="Curve2D_ias0g"]
 bake_interval = 10.0
@@ -317,6 +318,7 @@ script = ExtResource("8_nuypy")
 tileCharacterBody2D = NodePath("..")
 
 [node name="Objects" type="Node2D" parent="."]
+script = ExtResource("24_x3asg")
 
 [node name="Danger" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
 script = ExtResource("24_6jgqd")
@@ -463,7 +465,7 @@ texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
 [node name="WarningSign23" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(306, -120)
+position = Vector2(287, -126)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
@@ -491,93 +493,124 @@ offset = Vector2(0, -450)
 script = ExtResource("24_6jgqd")
 tile_path = NodePath("../../TilePath2DComponent")
 type = 1
-assign_radius = 48.0
 draw_gizmos = true
 
-[node name="TreesGreen8" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(-57.014008, 3.1409988)
-scale = Vector2(0.0190214, 0.0190214)
-texture = ExtResource("12_60mk0")
+[node name="Trees" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-434, 98)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/TreesGreen8"]
-position = Vector2(-1629.7434, 105.144745)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen8"]
-position = Vector2(-841.15796, 788.58545)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen7" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(-593.01404, -192.85901)
-scale = Vector2(0.0190214, 0.0190214)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/TreesGreen7"]
-position = Vector2(-1629.7441, 105.14453)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen7"]
-position = Vector2(-841.1582, 788.58496)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen6" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(-647.01404, -400.859)
-scale = Vector2(0.0190214, 0.0190214)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/TreesGreen6"]
-position = Vector2(-1629.7422, 105.14453)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen6"]
-position = Vector2(-841.15625, 788.584)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen5" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(421.986, -117.859)
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees"]
+position = Vector2(-28, -13)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen5"]
-position = Vector2(911.08984, 789.61084)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(256.986, -341.859)
-scale = Vector2(0.0190214, 0.0190214)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/TreesGreen2"]
-position = Vector2(-1629.7432, 105.14453)
-scale = Vector2(0.86554086, 0.86554086)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen4" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(81.98599, -172.85901)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen4"]
-position = Vector2(911.08984, 789.6113)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest"]
-position = Vector2(-464, 104)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees2" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-574, -164)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees2"]
+position = Vector2(-26, -28.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees3" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-611, -387)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees3"]
+position = Vector2(-25, -22.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees4" type="Node2D" parent="Objects/Forest"]
+position = Vector2(276, -349)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees4"]
+position = Vector2(-27, 7.6293945e-06)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees5" type="Node2D" parent="Objects/Forest"]
+position = Vector2(120, -129)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees5"]
+position = Vector2(-16, -37.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees6" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-90, 49)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees6"]
+position = Vector2(68, -36)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees7" type="Node2D" parent="Objects/Forest"]
+position = Vector2(381, -102)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees7"]
+position = Vector2(67, -37)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 

@@ -1,18 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7cdbmkh2fsi4"]
+[gd_scene load_steps=22 format=3 uid="uid://c7cdbmkh2fsi4"]
 
+[ext_resource type="Script" uid="uid://b42m3mfeb45tu" path="res://src/ui_manager.gd" id="1_qk0o7"]
 [ext_resource type="Texture2D" uid="uid://ddc5or468jcrc" path="res://assets/ui/dice.svg" id="1_r4npi"]
 [ext_resource type="Texture2D" uid="uid://byg25tnwvp50k" path="res://assets/ui/dice_shadow.svg" id="2_afb4s"]
 [ext_resource type="Texture2D" uid="uid://cd02fctqi5i6q" path="res://assets/ui/card_inventory.svg" id="3_oln55"]
+[ext_resource type="Texture2D" uid="uid://ju1gevwbaucb" path="res://assets/art/Animals/Javali-Europeu/javali_europeu_img.jpg" id="4_oln55"]
+[ext_resource type="Script" uid="uid://go22dybjwxpl" path="res://scenes/rolling_dice.gd" id="6_aw2gl"]
+[ext_resource type="Texture2D" uid="uid://20pljdtgii6y" path="res://assets/ui/dice_sprites/Separator/background.svg" id="6_uas5y"]
+[ext_resource type="Texture2D" uid="uid://cihtrbtxbphjh" path="res://assets/ui/dice_sprites/6.svg" id="7_aw2gl"]
 
-[node name="UI" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_qk0o7"]
+font_names = PackedStringArray("Lucida Sans")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uas5y"]
+font = SubResource("SystemFont_qk0o7")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_uas5y"]
+font_names = PackedStringArray("Lucida Fax")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw2gl"]
+paragraph_spacing = 15.0
+font = SubResource("SystemFont_uas5y")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_aw2gl"]
+font_names = PackedStringArray("Lucida Sans")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6or4"]
+paragraph_spacing = 15.0
+font = SubResource("SystemFont_aw2gl")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bxtkf"]
+blend_mode = 1
+
+[sub_resource type="SystemFont" id="SystemFont_2seet"]
+font_names = PackedStringArray("Lucida Sans Typewriter")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbdq6"]
+font = SubResource("SystemFont_2seet")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_oln55"]
+font_names = PackedStringArray("Lucida Sans Typewriter")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qk0o7"]
+font = SubResource("SystemFont_oln55")
+font_size = 32
+
+[sub_resource type="SystemFont" id="SystemFont_f6or4"]
+font_names = PackedStringArray("Lucida Sans Typewriter")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxtkf"]
+font = SubResource("SystemFont_f6or4")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control" node_paths=PackedStringArray("inv_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qk0o7")
+inv_ui = NodePath("InventorySlots")
+filled_inv_slots = 4
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Dices" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
@@ -27,14 +92,14 @@ offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="Button" parent="Dices"]
 layout_mode = 0
 offset_right = 1032.0
 offset_bottom = 1032.0
 scale = Vector2(0.22, 0.22)
 flat = true
 
-[node name="Dices" type="Control" parent="Panel"]
+[node name="Dices" type="Control" parent="Dices"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +109,7 @@ offset_bottom = -182.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="Panel/Dices"]
+[node name="TextureRect2" type="TextureRect" parent="Dices/Dices"]
 layout_mode = 0
 offset_left = 49.0
 offset_top = 48.0
@@ -54,7 +119,7 @@ rotation = 0.32925472
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_r4npi")
 
-[node name="TextureRect3" type="TextureRect" parent="Panel/Dices"]
+[node name="TextureRect3" type="TextureRect" parent="Dices/Dices"]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 80.0
@@ -64,7 +129,7 @@ rotation = -0.00023753941
 scale = Vector2(1.796, 1.796)
 texture = ExtResource("2_afb4s")
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Dices"]
+[node name="TextureRect" type="TextureRect" parent="Dices/Dices"]
 layout_mode = 0
 offset_left = 71.99999
 offset_top = 57.0
@@ -74,7 +139,7 @@ rotation = -0.33515677
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_r4npi")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="InventorySlots" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -87,7 +152,7 @@ offset_bottom = 2.000061
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="InventorySlots"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -99,37 +164,551 @@ offset_top = -111.5
 offset_bottom = 112.5
 alignment = 2
 
-[node name="Button" type="Button" parent="Panel2/HBoxContainer"]
+[node name="Button" type="Button" parent="InventorySlots/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
 autowrap_trim_flags = 64
 
-[node name="Button2" type="Button" parent="Panel2/HBoxContainer"]
+[node name="Button2" type="Button" parent="InventorySlots/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
 autowrap_trim_flags = 64
 
-[node name="Button3" type="Button" parent="Panel2/HBoxContainer"]
+[node name="Button3" type="Button" parent="InventorySlots/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
 autowrap_trim_flags = 64
 
-[node name="Button4" type="Button" parent="Panel2/HBoxContainer"]
+[node name="Button4" type="Button" parent="InventorySlots/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
 autowrap_trim_flags = 64
 
-[node name="TextureRect" type="TextureRect" parent="Panel2"]
+[node name="TextureRect" type="TextureRect" parent="InventorySlots"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.186, 0.186)
 texture = ExtResource("3_oln55")
+
+[node name="AnimalPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -515.0
+offset_top = -274.0
+offset_right = -107.0
+offset_bottom = 274.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Outline" type="ColorRect" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = 222.0
+grow_horizontal = 2
+texture = ExtResource("4_oln55")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Outline" type="ColorRect" parent="AnimalPanel/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="AnimalPanel/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="Title" type="Label" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 233.0
+offset_right = 15.0
+offset_bottom = 263.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "Placeholder Title"
+label_settings = SubResource("LabelSettings_uas5y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 255.0
+offset_right = 15.0
+offset_bottom = 285.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "(Placius holdiers)"
+label_settings = SubResource("LabelSettings_aw2gl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="AnimalPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 297.0
+offset_right = 15.0
+offset_bottom = 327.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "O Hemidactylus mabouia é proveniente da África ocidental e pode hoje ser encontrado no brasil como espécie invasora ao ter se escondido em navios mercantes durante o período colonial.
+Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
+label_settings = SubResource("LabelSettings_f6or4")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="AnimalPanel"]
+material = SubResource("CanvasItemMaterial_bxtkf")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -41.680054
+offset_right = 60.0
+offset_bottom = -10.680054
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="AnimalPanel/NextButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prosseguir"
+label_settings = SubResource("LabelSettings_lbdq6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SucessPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -515.0
+offset_top = -274.0
+offset_right = -107.0
+offset_bottom = 274.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Outline" type="ColorRect" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = 222.0
+grow_horizontal = 2
+texture = ExtResource("4_oln55")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Outline" type="ColorRect" parent="SucessPanel/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="SucessPanel/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="Title" type="Label" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 233.0
+offset_right = 15.0
+offset_bottom = 263.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "Placeholder Title"
+label_settings = SubResource("LabelSettings_uas5y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 255.0
+offset_right = 15.0
+offset_bottom = 285.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "(Placius holdiers)"
+label_settings = SubResource("LabelSettings_aw2gl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="SucessPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 297.0
+offset_right = 15.0
+offset_bottom = 327.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "O Hemidactylus mabouia é proveniente da África ocidental e pode hoje ser encontrado no brasil como espécie invasora ao ter se escondido em navios mercantes durante o período colonial.
+Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
+label_settings = SubResource("LabelSettings_f6or4")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="SucessPanel"]
+material = SubResource("CanvasItemMaterial_bxtkf")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -41.680054
+offset_right = 60.0
+offset_bottom = -10.680054
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="SucessPanel/NextButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prosseguir"
+label_settings = SubResource("LabelSettings_lbdq6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedDices" type="Panel" parent="."]
+self_modulate = Color(0.92253196, 0.31940988, 1.92523e-07, 0.6039216)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dices" type="HBoxContainer" parent="AnimatedDices"]
+layout_mode = 0
+offset_top = 362.0
+offset_right = 1536.0
+offset_bottom = 490.0
+alignment = 1
+
+[node name="Dice1" type="Button" parent="AnimatedDices/Dices"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("6_aw2gl")
+
+[node name="Left" type="TextureRect" parent="AnimatedDices/Dices/Dice1"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("6_uas5y")
+expand_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="AnimatedDices/Dices/Dice1/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_aw2gl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Right" type="TextureRect" parent="AnimatedDices/Dices/Dice1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 256.0
+rotation = 3.1415882
+scale = Vector2(1e-05, 1)
+texture = ExtResource("6_uas5y")
+expand_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="AnimatedDices/Dices/Dice1/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_aw2gl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Separator" type="Control" parent="AnimatedDices/Dices"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Dice2" type="Button" parent="AnimatedDices/Dices"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Left" type="TextureRect" parent="AnimatedDices/Dices/Dice2"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(1e-05, 1)
+texture = ExtResource("6_uas5y")
+expand_mode = 4
+
+[node name="DiceResult" type="TextureRect" parent="AnimatedDices/Dices/Dice2/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_aw2gl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Right" type="TextureRect" parent="AnimatedDices/Dices/Dice2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 256.0
+rotation = 3.1415882
+texture = ExtResource("6_uas5y")
+expand_mode = 4
+
+[node name="DiceResult" type="TextureRect" parent="AnimatedDices/Dices/Dice2/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_aw2gl")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Proceed" type="Button" parent="AnimatedDices"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -318.0
+offset_right = 120.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="Label" type="Label" parent="AnimatedDices/Proceed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prosseguir"
+label_settings = SubResource("LabelSettings_qk0o7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outline" type="ColorRect" parent="AnimatedDices/Proceed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="AnimatedDices/Proceed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999997, 0.7472954, 0.2797986, 1)
+
+[node name="Label" type="Label" parent="AnimatedDices"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -405.5
+offset_top = 77.0
+offset_right = 405.5
+offset_bottom = 141.0
+grow_horizontal = 2
+text = " Selecione 1 ou 2 dados para se locomover "
+label_settings = SubResource("LabelSettings_bxtkf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+
+[node name="Outline" type="ColorRect" parent="AnimatedDices/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="AnimatedDices/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999997, 0.7472954, 0.2797986, 1)

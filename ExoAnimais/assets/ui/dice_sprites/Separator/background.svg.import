@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cofdwfpne1pe7"
-path="res://.godot/imported/lagartixa_domestica.svg-487baddb3ab12317f945c12245977b16.ctex"
+uid="uid://20pljdtgii6y"
+path="res://.godot/imported/background.svg-937b0ebb4691fea2372263c311e4d0fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Lagartixa_Domestica/lagartixa_domestica.svg"
-dest_files=["res://.godot/imported/lagartixa_domestica.svg-487baddb3ab12317f945c12245977b16.ctex"]
+source_file="res://assets/ui/dice_sprites/Separator/background.svg"
+dest_files=["res://.godot/imported/background.svg-937b0ebb4691fea2372263c311e4d0fb.ctex"]
 
 [params]
 

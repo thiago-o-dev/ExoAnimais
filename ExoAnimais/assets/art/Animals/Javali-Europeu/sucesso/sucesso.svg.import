@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cni3h3djd8pvv"
-path="res://.godot/imported/lagartixa_domestica_img.jpeg-c7377f1cc5f40cfa504a6c60596dbdf7.ctex"
+uid="uid://b7sbv5qqg7a06"
+path="res://.godot/imported/sucesso.svg-48266c8d7484d1ffbe2b0ed852f4a132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Lagartixa_Domestica/lagartixa_domestica_img.jpeg"
-dest_files=["res://.godot/imported/lagartixa_domestica_img.jpeg-c7377f1cc5f40cfa504a6c60596dbdf7.ctex"]
+source_file="res://assets/art/Animals/Javali-Europeu/sucesso/sucesso.svg"
+dest_files=["res://.godot/imported/sucesso.svg-48266c8d7484d1ffbe2b0ed852f4a132.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=8.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

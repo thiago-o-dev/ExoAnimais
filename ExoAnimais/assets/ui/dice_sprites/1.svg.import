@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq45uflb8noyv"
-path="res://.godot/imported/sucesso_lagar.svg-9a7bdacf01ad855a07f7c2ed20f582bf.ctex"
+uid="uid://b6u131m12xmho"
+path="res://.godot/imported/1.svg-bdc3779960e4accb847920c78639ce49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Lagartixa_Domestica/sucesso/sucesso_lagar.svg"
-dest_files=["res://.godot/imported/sucesso_lagar.svg-9a7bdacf01ad855a07f7c2ed20f582bf.ctex"]
+source_file="res://assets/ui/dice_sprites/1.svg"
+dest_files=["res://.godot/imported/1.svg-bdc3779960e4accb847920c78639ce49.ctex"]
 
 [params]
 

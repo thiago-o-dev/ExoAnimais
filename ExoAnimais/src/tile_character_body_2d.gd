@@ -46,14 +46,16 @@ func _calc_y_offset(delta, steps : int = 2):
 
 @export var tile_position_index : int = 0
 var position_queue : Array[Vector2] = []
-func _on_movement_update(pos_index : int):
-	print("Signal received with value:", pos_index)
+func _on_movement_update(pos_index : int) -> float:
+	print("From position:", tile_position_index,"\nSignal received with value:", pos_index)
 	
 	var all_points_between : Array = _get_movement_order(tile_path_component.path_positions, tile_position_index, pos_index)
 	var next_in_queue : Array[Vector2] = []
 	next_in_queue.assign(all_points_between.map(func (x): return x + Vector2(0, -8)))
 	position_queue.append_array(next_in_queue)
 	tile_position_index = pos_index
+	
+	return len(all_points_between) * _animation_speed
 
 func _get_movement_order(arr, from : int, to : int) -> Array:
 	if from > to:

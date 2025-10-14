@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7sbv5qqg7a06"
-path="res://.godot/imported/sucesso.svg-d0e0e1235b887429b312c440909c4f9b.ctex"
+uid="uid://b7l4duasi8y62"
+path="res://.godot/imported/javali_europeu_card.svg-33d7b3d7732702018abe0f3b21587c4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Javali-Europeu/sucesso/sucesso.svg"
-dest_files=["res://.godot/imported/sucesso.svg-d0e0e1235b887429b312c440909c4f9b.ctex"]
+source_file="res://assets/art/Animals/Javali-Europeu/javali_europeu_card.svg"
+dest_files=["res://.godot/imported/javali_europeu_card.svg-33d7b3d7732702018abe0f3b21587c4c.ctex"]
 
 [params]
 

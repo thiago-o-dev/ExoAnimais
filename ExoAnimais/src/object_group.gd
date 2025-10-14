@@ -3,6 +3,7 @@ extends Node2D
 class_name ObjectGroup
 
 enum ObjectType {
+	NONE,
 	DANGER,
 	FOREST
 }

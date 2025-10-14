@@ -1,30 +1,16 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxce77o470wys"]
+[gd_scene load_steps=18 format=3 uid="uid://bxce77o470wys"]
 
 [ext_resource type="Texture2D" uid="uid://3gnm2yhta7xp" path="res://assets/ui/Tabletop.svg" id="1_jctoq"]
 [ext_resource type="Script" uid="uid://cs5gt8eogh1ax" path="res://src/tile_path_2d.gd" id="2_jctoq"]
-[ext_resource type="Script" uid="uid://catoqbkm8xnyg" path="res://src/tile_character_body_2d.gd" id="3_osl0y"]
-[ext_resource type="Texture2D" uid="uid://ltpqv5geclht" path="res://assets/art/character.svg" id="3_rbcxj"]
 [ext_resource type="Script" uid="uid://c7xakgp2t2tts" path="res://src/camera_2d.gd" id="4_7obph"]
-[ext_resource type="Texture2D" uid="uid://cr2s7yuvi5lw2" path="res://assets/art/hat_safari.svg" id="4_ias0g"]
 [ext_resource type="Texture2D" uid="uid://cah302msxxjxg" path="res://assets/art/path_breaks.svg" id="4_sigmb"]
 [ext_resource type="Script" uid="uid://bpxuvhtm21grp" path="res://src/world_app_component.gd" id="5_07fvr"]
 [ext_resource type="Script" uid="uid://bmj2ohp3hy38b" path="res://src/render_path_2d_in_line_2d.gd" id="6_rbcxj"]
 [ext_resource type="Script" uid="uid://1xgkngbuapjj" path="res://src/player_component.gd" id="8_b7h01"]
-[ext_resource type="Script" uid="uid://bfusyrfjnrpy0" path="res://src/position_component.gd" id="8_nuypy"]
 [ext_resource type="PackedScene" uid="uid://dq2ffxvwpag88" path="res://scenes/tile_character_body_2d.tscn" id="9_lup35"]
 [ext_resource type="Texture2D" uid="uid://g2f20pi2vmde" path="res://assets/art/warning_sign.svg" id="11_ng3bx"]
 [ext_resource type="Texture2D" uid="uid://b6gh3rhit8q18" path="res://assets/art/trees_green.svg" id="12_60mk0"]
-[ext_resource type="Texture2D" uid="uid://c4cbnqdsrp05f" path="res://assets/ui/diceButton.png" id="13_60mk0"]
-[ext_resource type="Texture2D" uid="uid://ckuo20ltpmsjc" path="res://assets/art/inventory_bar.svg" id="13_ijo1x"]
-[ext_resource type="Texture2D" uid="uid://ccqp8qna0k2j3" path="res://assets/art/animal_card.svg" id="14_b6u08"]
-[ext_resource type="Texture2D" uid="uid://cofdwfpne1pe7" path="res://assets/art/Animais/Lagartixa_Domestica/lagartixa_domestica.svg" id="15_egchb"]
-[ext_resource type="Texture2D" uid="uid://cni3h3djd8pvv" path="res://assets/art/Animais/Lagartixa_Domestica/lagartixa_domestica_img.jpeg" id="16_ubfle"]
-[ext_resource type="Texture2D" uid="uid://dq45uflb8noyv" path="res://assets/art/Animais/Lagartixa_Domestica/sucesso/sucesso_lagar.svg" id="18_383vt"]
-[ext_resource type="Texture2D" uid="uid://b7l4duasi8y62" path="res://assets/art/Animais/Javali-Europeu/javali_europeu_card.svg" id="19_1fp5g"]
-[ext_resource type="Texture2D" uid="uid://ju1gevwbaucb" path="res://assets/art/Animais/Javali-Europeu/javali_europeu_img.jpg" id="20_2xhsw"]
-[ext_resource type="Texture2D" uid="uid://dwsudd5i0kt8r" path="res://assets/art/Animais/Javali-Europeu/text.svg" id="21_2xhsw"]
-[ext_resource type="Texture2D" uid="uid://d4gxxvdkq6sth" path="res://assets/art/Animais/Lagartixa_Domestica/text_lagartixa_domestica.svg" id="21_wt2mi"]
-[ext_resource type="Texture2D" uid="uid://b7sbv5qqg7a06" path="res://assets/art/Animais/Javali-Europeu/sucesso/sucesso.svg" id="22_wt2mi"]
+[ext_resource type="PackedScene" uid="uid://dvudaajrjry6k" path="res://scenes/animals.tscn" id="14_ijo1x"]
 [ext_resource type="Script" uid="uid://2lajh1f3gj5h" path="res://src/object_group.gd" id="24_6jgqd"]
 [ext_resource type="Script" uid="uid://bv1ogrc6ijrfr" path="res://src/objects_manager.gd" id="24_x3asg"]
 [ext_resource type="PackedScene" uid="uid://c7cdbmkh2fsi4" path="res://scenes/tabletop_ui.tscn" id="28_8j35k"]
@@ -40,17 +26,15 @@ point_count = 20
 
 [sub_resource type="PrismMesh" id="PrismMesh_b7h01"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_60mk0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rbcxj"]
-
 [node name="Tabletop" type="Node2D"]
 
-[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("player_component", "tile_path_2D")]
+[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("animals_manager", "player_component", "objects_manager", "tile_path_2D")]
 script = ExtResource("5_07fvr")
+animals_manager = NodePath("../AnimalsManager")
 player_component = NodePath("../PlayerComponent")
-player_quantity = 2
+objects_manager = NodePath("../ObjectsManager")
 tile_path_2D = NodePath("../TilePath2DComponent")
+player_quantity = 2
 
 [node name="Tabletop" type="Sprite2D" parent="."]
 texture_filter = 2
@@ -131,304 +115,302 @@ mesh = SubResource("SphereMesh_jctoq")
 [node name="EndPosition" type="Marker2D" parent="TilePath2DComponent"]
 position = Vector2(554, 258)
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="ObjectsManager" type="Node2D" parent="."]
 script = ExtResource("24_x3asg")
 
-[node name="Danger" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
+[node name="Danger" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path")]
 script = ExtResource("24_6jgqd")
 tile_path = NodePath("../../TilePath2DComponent")
 
-[node name="WarningSign" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-486, 201)
 rotation = -0.203684
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign3" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign3" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-463, 294)
 rotation = 0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign4" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign4" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-470, 32)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign5" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign5" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-687, -94)
 rotation = -0.380482
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign6" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign6" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-591, -5)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign7" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign7" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-628, -276)
 rotation = 0.23911
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign8" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign8" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-664, -307)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign9" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign9" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-315, -429)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign10" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign10" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-223, -413)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign11" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign11" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-91, -215)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign12" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign12" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(81, -328)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign13" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign13" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(271, -265)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign14" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign14" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(184, -178)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign15" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign15" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(82, -99)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign16" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign16" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-117, -92)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign17" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign17" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-153, 1.99999)
 rotation = 0.23911
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign18" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign18" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-48, 115)
 rotation = 0.23911
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign19" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign19" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(17, 192)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign20" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign20" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(95, 90)
 rotation = 0.23911
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign21" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign21" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(105, -3.99999)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign22" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign22" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(200, -97)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign23" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign23" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(287, -126)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign24" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign24" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(437, 19)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign25" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign25" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(433, 116)
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="WarningSign26" type="Sprite2D" parent="Objects/Danger"]
+[node name="WarningSign26" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(635, 215)
 rotation = -0.120428
 scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="Forest" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
+[node name="Forest" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path")]
 script = ExtResource("24_6jgqd")
 tile_path = NodePath("../../TilePath2DComponent")
 type = 1
 
-[node name="Trees" type="Node2D" parent="Objects/Forest"]
+[node name="Trees" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-434, 98)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees"]
 position = Vector2(-28, -13)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees2" type="Node2D" parent="Objects/Forest"]
+[node name="Trees2" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-574, -164)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees2"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees2"]
 position = Vector2(-26, -28.999992)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees2/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees2/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees3" type="Node2D" parent="Objects/Forest"]
+[node name="Trees3" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-611, -387)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees3"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees3"]
 position = Vector2(-25, -22.999992)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees3/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees3/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees4" type="Node2D" parent="Objects/Forest"]
+[node name="Trees4" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(276, -349)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees4"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees4"]
 position = Vector2(-27, 7.6293945e-06)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees4/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees4/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees5" type="Node2D" parent="Objects/Forest"]
+[node name="Trees5" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(120, -129)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees5"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees5"]
 position = Vector2(-16, -37.999992)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees5/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees5/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees6" type="Node2D" parent="Objects/Forest"]
+[node name="Trees6" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-90, 49)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees6"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees6"]
 position = Vector2(68, -36)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees6/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees6/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
-[node name="Trees7" type="Node2D" parent="Objects/Forest"]
+[node name="Trees7" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(381, -102)
 
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees7"]
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees7"]
 position = Vector2(67, -37)
 scale = Vector2(0.0164638, 0.0164638)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees7/TreesGreen3"]
 position = Vector2(-2125.875, 0.00012207031)
 scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees7/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 
 [node name="Scenery" type="Node2D" parent="."]
-
-[node name="Signs" type="Node2D" parent="Scenery"]
 
 [node name="PlayerComponent" type="Node2D" parent="." node_paths=PackedStringArray("active_players", "active_player_indicator", "camera")]
 script = ExtResource("8_b7h01")
@@ -469,152 +451,8 @@ position = Vector2(0, -45)
 scale = Vector2(20, 15)
 mesh = SubResource("PrismMesh_b7h01")
 
-[node name="deactivate" type="Node2D" parent="PlayerComponent"]
-visible = false
-
-[node name="Node2D2" type="Node2D" parent="PlayerComponent/deactivate"]
-visible = false
-position = Vector2(246, -379)
-scale = Vector2(0.5, 0.5)
-
-[node name="Body" type="Sprite2D" parent="PlayerComponent/deactivate/Node2D2"]
-modulate = Color(1, 0.560704, 0.771683, 1)
-rotation = 0.0108932
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_rbcxj")
-
-[node name="HatSafari" type="Sprite2D" parent="PlayerComponent/deactivate/Node2D2"]
-visible = false
-position = Vector2(2.98023e-08, -18)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ias0g")
-
-[node name="Node2D" type="Node2D" parent="PlayerComponent/deactivate"]
-visible = false
-position = Vector2(160, -355)
-scale = Vector2(0.5, 0.5)
-
-[node name="Body" type="Sprite2D" parent="PlayerComponent/deactivate/Node2D"]
-modulate = Color(0.138151, 0.840537, 1, 1)
-rotation = 0.0108932
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_rbcxj")
-
-[node name="HatSafari" type="Sprite2D" parent="PlayerComponent/deactivate/Node2D"]
-position = Vector2(0.5, -18)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ias0g")
-
-[node name="temporary" type="CharacterBody2D" parent="PlayerComponent/deactivate" node_paths=PackedStringArray("position_component")]
-visible = false
-position = Vector2(-374, 181)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("3_osl0y")
-position_component = NodePath("PositionComponent")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerComponent/deactivate/temporary"]
-visible = false
-modulate = Color(1, 1, 1, 0.180392)
-scale = Vector2(770, 494.108)
-mesh = SubResource("BoxMesh_60mk0")
-
-[node name="Body" type="Sprite2D" parent="PlayerComponent/deactivate/temporary"]
-modulate = Color(0.541176, 1, 0.552941, 1)
-rotation = 0.0108932
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_rbcxj")
-
-[node name="HatSafari" type="Sprite2D" parent="PlayerComponent/deactivate/temporary"]
-position = Vector2(0.5, -18)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_ias0g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerComponent/deactivate/temporary"]
-visible = false
-shape = SubResource("CircleShape2D_rbcxj")
-
-[node name="UI" type="Node2D" parent="PlayerComponent/deactivate/temporary"]
-
-[node name="DiceButton" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI"]
-position = Vector2(294, 156)
-scale = Vector2(0.187891, 0.187891)
-texture = ExtResource("13_60mk0")
-
-[node name="InventoryBar" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI"]
-position = Vector2(-244, 190)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("13_ijo1x")
-
-[node name="AnimalCard" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI"]
-visible = false
-position = Vector2(184, -4.76837e-07)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("14_b6u08")
-
-[node name="Lagartixa" type="Node2D" parent="PlayerComponent/deactivate/temporary/UI"]
-
-[node name="LagartixaDomestica" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Lagartixa"]
-visible = false
-position = Vector2(184, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("15_egchb")
-
-[node name="LagartixaDomesticaImg" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Lagartixa/LagartixaDomestica"]
-position = Vector2(0, -1700)
-scale = Vector2(3.97, 3.97)
-texture = ExtResource("16_ubfle")
-
-[node name="TextLagartixaDomestica" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Lagartixa"]
-position = Vector2(-334, 190)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("21_wt2mi")
-
-[node name="SucessoLagar" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Lagartixa"]
-visible = false
-position = Vector2(184, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("18_383vt")
-
-[node name="LagartixaDomesticaImg" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Lagartixa/SucessoLagar"]
-position = Vector2(0, -1700)
-scale = Vector2(3.97, 3.97)
-texture = ExtResource("16_ubfle")
-
-[node name="Javali" type="Node2D" parent="PlayerComponent/deactivate/temporary/UI"]
-
-[node name="LagartixaDomestica" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Javali"]
-visible = false
-position = Vector2(184, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("19_1fp5g")
-
-[node name="LagartixaDomesticaImg" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Javali/LagartixaDomestica"]
-position = Vector2(0, -1700)
-scale = Vector2(3.97, 3.97)
-texture = ExtResource("20_2xhsw")
-
-[node name="TextLagartixaDomestica" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Javali"]
-position = Vector2(-274, 190)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("21_2xhsw")
-
-[node name="SucessoLagar" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Javali"]
-visible = false
-position = Vector2(184, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("22_wt2mi")
-
-[node name="LagartixaDomesticaImg" type="Sprite2D" parent="PlayerComponent/deactivate/temporary/UI/Javali/SucessoLagar"]
-position = Vector2(0, -1700)
-scale = Vector2(3.97, 3.97)
-texture = ExtResource("20_2xhsw")
-
-[node name="PositionComponent" type="Node" parent="PlayerComponent/deactivate/temporary" node_paths=PackedStringArray("tileCharacterBody2D")]
-script = ExtResource("8_nuypy")
-tileCharacterBody2D = NodePath("..")
-
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("28_8j35k")]
+
+[node name="AnimalsManager" parent="." instance=ExtResource("14_ijo1x")]

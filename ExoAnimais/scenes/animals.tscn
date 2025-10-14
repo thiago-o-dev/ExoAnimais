@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvudaajrjry6k"]
+
+[ext_resource type="Script" uid="uid://bxi1010nrd5p6" path="res://scenes/animals_manager.gd" id="1_011m4"]
+[ext_resource type="Script" uid="uid://54b6j6uhcowo" path="res://src/animal_data.gd" id="1_qtkit"]
+[ext_resource type="Texture2D" uid="uid://cx8nsbdscjvhi" path="res://assets/animals/photos/javali_europeu_img.jpg" id="2_bc1kg"]
+[ext_resource type="Script" uid="uid://su5fjmlnij6b" path="res://src/position_pairs.gd" id="3_3f28n"]
+[ext_resource type="Texture2D" uid="uid://d2bun434qxjwk" path="res://assets/animals/photos/lagartixa_domestica_img.jpeg" id="4_cfsof"]
+
+[sub_resource type="Resource" id="Resource_cfsof"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 12)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_3f28n"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(24, 32)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[node name="AnimalsManager" type="Node"]
+script = ExtResource("1_011m4")
+
+[node name="JavaliEuropeu" type="Node" parent="."]
+script = ExtResource("1_qtkit")
+image = ExtResource("2_bc1kg")
+title = "Javali-europeu"
+subtitle = "Sus scrofa"
+description = "Comuns da Ásia e Europa, estão excluídos das regiões desérticas e altas cadeias de montanhas. Na América do Sul, como espécie invasora, são facilmente encontrados na Argentina, Uruguai e Brasil (especialmente nos Estados do Sul) e Estados Unidos.
+Acredita-se que na América do Sul o javali-europeu tenha sido introduzido pela primeira vez na Argentina e Uruguai por volta do século XX para fins de criação. No Brasil a criação de javalis e híbridos começou em grande escala em meados da década de 1990."
+success_text = "Você retornou o animal exótico da Argentina, Uruguai, Brasil e Estados Unidos ao seu habitat natural na Europa e Ásia!"
+exotic_at = SubResource("Resource_cfsof")
+native_at = SubResource("Resource_3f28n")
+metadata/_custom_type_script = "uid://54b6j6uhcowo"
+
+[node name="LagartixaDomestica" type="Node" parent="."]
+script = ExtResource("1_qtkit")
+image = ExtResource("4_cfsof")
+title = "Lagartixa-domestica"
+subtitle = "Hemidactylus mabouia"
+description = "O Hemidactylus mabouia é proveniente da África ocidental e pode hoje ser encontrado no brasil como espécie invasora ao ter se escondido em navios mercantes durante o período colonial.
+Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
+success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+exotic_at = SubResource("Resource_cfsof")
+native_at = SubResource("Resource_3f28n")
+metadata/_custom_type_script = "uid://54b6j6uhcowo"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7l4duasi8y62"
-path="res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"
+uid="uid://d4gxxvdkq6sth"
+path="res://.godot/imported/text_lagartixa_domestica.svg-9cc50a75fe01d28f3836c55f2e99b7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Javali-Europeu/javali_europeu_card.svg"
-dest_files=["res://.godot/imported/javali_europeu_card.svg-b0362e5966b837dbf67a47158f9f6646.ctex"]
+source_file="res://assets/art/Animals/Lagartixa_Domestica/text_lagartixa_domestica.svg"
+dest_files=["res://.godot/imported/text_lagartixa_domestica.svg-9cc50a75fe01d28f3836c55f2e99b7db.ctex"]
 
 [params]
 

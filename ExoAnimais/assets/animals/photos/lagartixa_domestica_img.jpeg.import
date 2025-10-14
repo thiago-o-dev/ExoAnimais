@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwsudd5i0kt8r"
-path="res://.godot/imported/text.svg-94ca7613c0d6a98973c383625a7a413d.ctex"
+uid="uid://d2bun434qxjwk"
+path="res://.godot/imported/lagartixa_domestica_img.jpeg-d8f9ea0a00e7c05e926cbb41f5e3e4f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Animais/Javali-Europeu/text.svg"
-dest_files=["res://.godot/imported/text.svg-94ca7613c0d6a98973c383625a7a413d.ctex"]
+source_file="res://assets/animals/photos/lagartixa_domestica_img.jpeg"
+dest_files=["res://.godot/imported/lagartixa_domestica_img.jpeg-d8f9ea0a00e7c05e926cbb41f5e3e4f7.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=8.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

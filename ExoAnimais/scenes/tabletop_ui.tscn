@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -31,9 +32,11 @@ layout_mode = 0
 offset_right = 1032.0
 offset_bottom = 1032.0
 scale = Vector2(0.22, 0.22)
+flat = true
 
 [node name="Dices" type="Control" parent="Panel"]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -188.0
@@ -72,6 +75,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_r4npi")
 
 [node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

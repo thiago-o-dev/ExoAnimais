@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bxce77o470wys"]
+[gd_scene load_steps=34 format=3 uid="uid://bxce77o470wys"]
 
 [ext_resource type="Texture2D" uid="uid://3gnm2yhta7xp" path="res://assets/ui/Tabletop.svg" id="1_jctoq"]
 [ext_resource type="Script" uid="uid://cs5gt8eogh1ax" path="res://src/tile_path_2d.gd" id="2_jctoq"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b7sbv5qqg7a06" path="res://assets/art/Animais/Javali-Europeu/sucesso/sucesso.svg" id="22_wt2mi"]
 [ext_resource type="Script" uid="uid://2lajh1f3gj5h" path="res://src/object_group.gd" id="24_6jgqd"]
 [ext_resource type="Script" uid="uid://bv1ogrc6ijrfr" path="res://src/objects_manager.gd" id="24_x3asg"]
+[ext_resource type="PackedScene" uid="uid://c7cdbmkh2fsi4" path="res://scenes/tabletop_ui.tscn" id="28_8j35k"]
 
 [sub_resource type="Curve2D" id="Curve2D_ias0g"]
 bake_interval = 10.0
@@ -129,6 +130,301 @@ mesh = SubResource("SphereMesh_jctoq")
 
 [node name="EndPosition" type="Marker2D" parent="TilePath2DComponent"]
 position = Vector2(554, 258)
+
+[node name="Objects" type="Node2D" parent="."]
+script = ExtResource("24_x3asg")
+
+[node name="Danger" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
+script = ExtResource("24_6jgqd")
+tile_path = NodePath("../../TilePath2DComponent")
+
+[node name="WarningSign" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-486, 201)
+rotation = -0.203684
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign3" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-463, 294)
+rotation = 0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign4" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-470, 32)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign5" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-687, -94)
+rotation = -0.380482
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign6" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-591, -5)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign7" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-628, -276)
+rotation = 0.23911
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign8" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-664, -307)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign9" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-315, -429)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign10" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-223, -413)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign11" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-91, -215)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign12" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(81, -328)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign13" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(271, -265)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign14" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(184, -178)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign15" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(82, -99)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign16" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-117, -92)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign17" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-153, 1.99999)
+rotation = 0.23911
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign18" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(-48, 115)
+rotation = 0.23911
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign19" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(17, 192)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign20" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(95, 90)
+rotation = 0.23911
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign21" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(105, -3.99999)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign22" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(200, -97)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign23" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(287, -126)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign24" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(437, 19)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign25" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(433, 116)
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="WarningSign26" type="Sprite2D" parent="Objects/Danger"]
+position = Vector2(635, 215)
+rotation = -0.120428
+scale = Vector2(0.0257937, 0.0257937)
+texture = ExtResource("11_ng3bx")
+offset = Vector2(0, -450)
+
+[node name="Forest" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
+script = ExtResource("24_6jgqd")
+tile_path = NodePath("../../TilePath2DComponent")
+type = 1
+
+[node name="Trees" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-434, 98)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees"]
+position = Vector2(-28, -13)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees2" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-574, -164)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees2"]
+position = Vector2(-26, -28.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees3" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-611, -387)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees3"]
+position = Vector2(-25, -22.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees4" type="Node2D" parent="Objects/Forest"]
+position = Vector2(276, -349)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees4"]
+position = Vector2(-27, 7.6293945e-06)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees5" type="Node2D" parent="Objects/Forest"]
+position = Vector2(120, -129)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees5"]
+position = Vector2(-16, -37.999992)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees6" type="Node2D" parent="Objects/Forest"]
+position = Vector2(-90, 49)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees6"]
+position = Vector2(68, -36)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees7" type="Node2D" parent="Objects/Forest"]
+position = Vector2(381, -102)
+
+[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees7"]
+position = Vector2(67, -37)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
 
 [node name="Scenery" type="Node2D" parent="."]
 
@@ -317,301 +613,8 @@ texture = ExtResource("20_2xhsw")
 script = ExtResource("8_nuypy")
 tileCharacterBody2D = NodePath("..")
 
-[node name="Objects" type="Node2D" parent="."]
-script = ExtResource("24_x3asg")
-
-[node name="Danger" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
-script = ExtResource("24_6jgqd")
-tile_path = NodePath("../../TilePath2DComponent")
-draw_gizmos = true
-
-[node name="WarningSign" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-486, 201)
-rotation = -0.203684
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign3" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-463, 294)
-rotation = 0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign4" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-470, 32)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign5" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-687, -94)
-rotation = -0.380482
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign6" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-591, -5)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign7" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-628, -276)
-rotation = 0.23911
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign8" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-664, -307)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign9" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-315, -429)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign10" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-223, -413)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign11" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-91, -215)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign12" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(81, -328)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign13" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(271, -265)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign14" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(184, -178)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign15" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(82, -99)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign16" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-117, -92)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign17" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-153, 1.99999)
-rotation = 0.23911
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign18" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(-48, 115)
-rotation = 0.23911
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign19" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(17, 192)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign20" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(95, 90)
-rotation = 0.23911
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign21" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(105, -3.99999)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign22" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(200, -97)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign23" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(287, -126)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign24" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(437, 19)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign25" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(433, 116)
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="WarningSign26" type="Sprite2D" parent="Objects/Danger"]
-position = Vector2(635, 215)
-rotation = -0.120428
-scale = Vector2(0.0257937, 0.0257937)
-texture = ExtResource("11_ng3bx")
-offset = Vector2(0, -450)
-
-[node name="Forest" type="Node2D" parent="Objects" node_paths=PackedStringArray("tile_path")]
-script = ExtResource("24_6jgqd")
-tile_path = NodePath("../../TilePath2DComponent")
-type = 1
-draw_gizmos = true
-
-[node name="Trees" type="Node2D" parent="Objects/Forest"]
-position = Vector2(-434, 98)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees"]
-position = Vector2(-28, -13)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees2" type="Node2D" parent="Objects/Forest"]
-position = Vector2(-574, -164)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees2"]
-position = Vector2(-26, -28.999992)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees2/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees3" type="Node2D" parent="Objects/Forest"]
-position = Vector2(-611, -387)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees3"]
-position = Vector2(-25, -22.999992)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees3/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees4" type="Node2D" parent="Objects/Forest"]
-position = Vector2(276, -349)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees4"]
-position = Vector2(-27, 7.6293945e-06)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees4/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees5" type="Node2D" parent="Objects/Forest"]
-position = Vector2(120, -129)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees5"]
-position = Vector2(-16, -37.999992)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees5/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees6" type="Node2D" parent="Objects/Forest"]
-position = Vector2(-90, 49)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees6"]
-position = Vector2(68, -36)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees6/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
-[node name="Trees7" type="Node2D" parent="Objects/Forest"]
-position = Vector2(381, -102)
-
-[node name="TreesGreen3" type="Sprite2D" parent="Objects/Forest/Trees7"]
-position = Vector2(67, -37)
-scale = Vector2(0.0164638, 0.0164638)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen2" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
-position = Vector2(-2125.875, 0.00012207031)
-scale = Vector2(1.1553469, 1.1553469)
-texture = ExtResource("12_60mk0")
-
-[node name="TreesGreen" type="Sprite2D" parent="Objects/Forest/Trees7/TreesGreen3"]
-position = Vector2(-1214.7847, 728.872)
-texture = ExtResource("12_60mk0")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("28_8j35k")]

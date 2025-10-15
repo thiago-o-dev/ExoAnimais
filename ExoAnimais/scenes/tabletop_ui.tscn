@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://byg25tnwvp50k" path="res://assets/ui/dice_shadow.svg" id="2_afb4s"]
 [ext_resource type="Texture2D" uid="uid://cd02fctqi5i6q" path="res://assets/ui/card_inventory.svg" id="3_oln55"]
 [ext_resource type="Texture2D" uid="uid://ju1gevwbaucb" path="res://assets/art/Animals/Javali-Europeu/javali_europeu_img.jpg" id="4_oln55"]
-[ext_resource type="Script" uid="uid://go22dybjwxpl" path="res://scenes/rolling_dice.gd" id="6_aw2gl"]
+[ext_resource type="Script" uid="uid://go22dybjwxpl" path="res://src/rolling_dice.gd" id="6_aw2gl"]
 [ext_resource type="Texture2D" uid="uid://20pljdtgii6y" path="res://assets/ui/dice_sprites/Separator/background.svg" id="6_uas5y"]
 [ext_resource type="Texture2D" uid="uid://cihtrbtxbphjh" path="res://assets/ui/dice_sprites/6.svg" id="7_aw2gl"]
 
@@ -75,7 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qk0o7")
 inv_ui = NodePath("InventorySlots")
-filled_inv_slots = 4
 
 [node name="Dices" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -509,10 +508,14 @@ offset_right = 1536.0
 offset_bottom = 490.0
 alignment = 1
 
-[node name="Dice1" type="Button" parent="AnimatedDices/Dices"]
+[node name="Dice1" type="Button" parent="AnimatedDices/Dices" node_paths=PackedStringArray("left_side", "left_side_dice", "right_side", "right_side_dice")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 script = ExtResource("6_aw2gl")
+left_side = NodePath("Left")
+left_side_dice = NodePath("Left/TextureRect")
+right_side = NodePath("Right")
+right_side_dice = NodePath("Right/TextureRect")
 
 [node name="Left" type="TextureRect" parent="AnimatedDices/Dices/Dice1"]
 layout_mode = 0
@@ -568,9 +571,14 @@ stretch_mode = 5
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="Dice2" type="Button" parent="AnimatedDices/Dices"]
+[node name="Dice2" type="Button" parent="AnimatedDices/Dices" node_paths=PackedStringArray("left_side", "left_side_dice", "right_side", "right_side_dice")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+script = ExtResource("6_aw2gl")
+left_side = NodePath("Left")
+left_side_dice = NodePath("Left/DiceResult")
+right_side = NodePath("Right")
+right_side_dice = NodePath("Right/DiceResult")
 
 [node name="Left" type="TextureRect" parent="AnimatedDices/Dices/Dice2"]
 layout_mode = 0

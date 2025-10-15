@@ -9,6 +9,7 @@ enum ObjectType {
 }
 @export_category("Components")
 @export var tile_path : TilePath2D
+@export var object_manager : ObjectsManager
 
 @export_category("Information")
 @export var type : ObjectType
@@ -25,6 +26,8 @@ func _draw() -> void:
 
 func _ready() -> void:
 	children.assign(self.get_children())
+	var untyped_points : Array = []
+	var typed_points : Array[int] = []
 	
 	queue_redraw()
 	
@@ -34,9 +37,12 @@ func _ready() -> void:
 	print(type, "=======================")
 	for child in children:
 		print(child.name)
-		for point in tile_path.path_positions:
-			if child.position.distance_to(point) < assign_radius:
-				print(point)
+		for i in range(0, len(tile_path.path_positions)):
+			if child.position.distance_to(tile_path.path_positions[i]) < assign_radius:
+				untyped_points.append(i)
+	
+	typed_points.assign(untyped_points)
+	object_manager.add_to_objects(type, typed_points)
 
 func _process(_delta):
 	if Engine.is_editor_hint():

@@ -118,9 +118,11 @@ position = Vector2(554, 258)
 [node name="ObjectsManager" type="Node2D" parent="."]
 script = ExtResource("24_x3asg")
 
-[node name="Danger" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path")]
+[node name="Danger" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path", "object_manager")]
 script = ExtResource("24_6jgqd")
 tile_path = NodePath("../../TilePath2DComponent")
+object_manager = NodePath("..")
+type = 1
 
 [node name="WarningSign" type="Sprite2D" parent="ObjectsManager/Danger"]
 position = Vector2(-486, 201)
@@ -286,10 +288,11 @@ scale = Vector2(0.0257937, 0.0257937)
 texture = ExtResource("11_ng3bx")
 offset = Vector2(0, -450)
 
-[node name="Forest" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path")]
+[node name="Forest" type="Node2D" parent="ObjectsManager" node_paths=PackedStringArray("tile_path", "object_manager")]
 script = ExtResource("24_6jgqd")
 tile_path = NodePath("../../TilePath2DComponent")
-type = 1
+object_manager = NodePath("..")
+type = 2
 
 [node name="Trees" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-434, 98)

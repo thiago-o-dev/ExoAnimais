@@ -15,6 +15,7 @@ var is_ui_frozen : bool = false
 
 @export_category("Player Configurations")
 @export var player_quantity : int = 1
+@export var player_inventory_capacity : int = 4
 
 @export_category("Information")
 @export var debug : bool = true
@@ -36,6 +37,7 @@ func _move_player_to(pos_increment : int):
 	is_player_moving = true
 	
 	var player_position = _check_player_landed_position()
+	print("is moving to ",player_position)
 	object_type_to_act_on_move_end = objects_manager.get_object_in_pos(player_position)
 
 func _check_player_landed_position():
@@ -66,16 +68,25 @@ func _process(delta):
 	
 	if is_player_moving and animation_delay == 0:
 		is_player_moving = false
+		
+		print("Landed on ", object_type_to_act_on_move_end)
+		
 		match(object_type_to_act_on_move_end):
 			ObjectGroup.ObjectType.NONE:
 				pass
 			ObjectGroup.ObjectType.DANGER:
-				pass
+				_landed_on_danger()
 			ObjectGroup.ObjectType.FOREST:
 				pass
+		
 		_start_next_turn()
 		return
 
 func _log(text):
 	if debug:
 		print(text)
+		
+func _landed_on_danger():
+	# adicionar AnimalData ao inventario do jogador
+	print("Landed on Danger")
+	print(animals_manager.return_animal_in(_check_player_landed_position()))

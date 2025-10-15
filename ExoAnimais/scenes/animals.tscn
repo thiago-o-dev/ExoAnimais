@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvudaajrjry6k"]
 
-[ext_resource type="Script" uid="uid://bxi1010nrd5p6" path="res://scenes/animals_manager.gd" id="1_011m4"]
+[ext_resource type="Script" uid="uid://bxi1010nrd5p6" path="res://src/animals_manager.gd" id="1_011m4"]
 [ext_resource type="Script" uid="uid://54b6j6uhcowo" path="res://src/animal_data.gd" id="1_qtkit"]
 [ext_resource type="Texture2D" uid="uid://cx8nsbdscjvhi" path="res://assets/animals/photos/javali_europeu_img.jpg" id="2_bc1kg"]
 [ext_resource type="Script" uid="uid://su5fjmlnij6b" path="res://src/position_pairs.gd" id="3_3f28n"]

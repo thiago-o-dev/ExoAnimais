@@ -41,6 +41,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
+autowrap_mode = 2
 autowrap_trim_flags = 64
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
@@ -48,6 +49,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
+autowrap_mode = 2
 autowrap_trim_flags = 64
 
 [node name="Button3" type="Button" parent="HBoxContainer"]
@@ -55,6 +57,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
+autowrap_mode = 2
 autowrap_trim_flags = 64
 
 [node name="Button4" type="Button" parent="HBoxContainer"]
@@ -62,4 +65,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "text"
 flat = true
+autowrap_mode = 2
 autowrap_trim_flags = 64

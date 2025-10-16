@@ -6,6 +6,11 @@ class_name UIManager
 @export var animal_panel : AnimalPanel
 @export var animated_dice_manager : AnimatedDicesManager
 @export var dice_button : Button
+@export var end_turn_button : Button
+@export var ask_selection : Panel
+@export var skip_selection : Button
+@export var confirm_selection : Button
+@export var ranking : Ranking
 
 @export_category("Configurations")
 @export var filled_inv_slots : int = 0
@@ -26,7 +31,7 @@ func add_animal_data_to_inventory(data : AnimalData):
 	open_animal_data(data)
 	return true
 
-func open_animal_data(data : AnimalData, is_return : bool = false):
+func open_animal_data(data : AnimalData, is_return : bool = false, is_success : bool = true):
 	if !data:
 		inventory_slots.deselect_all()
 		return
@@ -34,6 +39,24 @@ func open_animal_data(data : AnimalData, is_return : bool = false):
 	animal_panel.set_animal_data(data, is_return)
 	animal_panel.show_animal_panel()
 
+func tween_to(object, variable_name : String, target, duration: float) -> Tween:
+	var t = create_tween()
+	t.tween_property(object, variable_name, target, duration).set_trans(Tween.TRANS_QUAD)
+	return t
+
+func ask_selection_set_visible(value : bool):
+	ask_selection.visible = value
+
+func ask_selection_set_active(value : bool):
+	ask_selection_set_visible(true)
+	var t : Tween
+	if value:
+		t = tween_to(ask_selection, "modulate:a", 1, 2)
+	else:
+		t = tween_to(ask_selection, "modulate:a", 0, 2)
+
+	t.finished.connect(ask_selection_set_visible.bind(value))
+	
 func close_animal_datas():
 	animal_panel.close_animal_panel()
 

@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://su5fjmlnij6b"
 
 [sub_resource type="Resource" id="Resource_3f28n"]
 script = ExtResource("3_3f28n")
-ranges = Array[Vector2i]([Vector2i(24, 32)])
+ranges = Array[Vector2i]([Vector2i(0, 32)])
 metadata/_custom_type_script = "uid://su5fjmlnij6b"
 
 [node name="AnimalsManager" type="Node"]
@@ -41,7 +41,12 @@ title = "Javali-europeu"
 subtitle = "Sus scrofa"
 description = "Comuns da Ásia e Europa, estão excluídos das regiões desérticas e altas cadeias de montanhas. Na América do Sul, como espécie invasora, são facilmente encontrados na Argentina, Uruguai e Brasil (especialmente nos Estados do Sul) e Estados Unidos.
 Acredita-se que na América do Sul o javali-europeu tenha sido introduzido pela primeira vez na Argentina e Uruguai por volta do século XX para fins de criação. No Brasil a criação de javalis e híbridos começou em grande escala em meados da década de 1990."
-success_text = "Você retornou o animal exótico da Argentina, Uruguai, Brasil e Estados Unidos ao seu habitat natural na Europa e Ásia!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -53,7 +58,12 @@ title = "Lagartixa-domestica"
 subtitle = "Hemidactylus mabouia"
 description = "O Hemidactylus mabouia é proveniente da África ocidental e pode hoje ser encontrado no brasil como espécie invasora ao ter se escondido em navios mercantes durante o período colonial.
 Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -65,7 +75,12 @@ title = "Cabra"
 subtitle = "Capra hircus"
 description = "A cabra foi domesticada há milhares de anos e levada por humanos para várias partes do mundo. Em algumas ilhas, como Galápagos, Havaí e Madagascar, populações ferais se formaram após solturas e abandonos. Nessas regiões, elas causam degradação ambiental ao destruir vegetação nativa, competir com espécies locais e favorecer a erosão do solo.
 Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -76,7 +91,12 @@ image = ExtResource("7_ek86p")
 title = "Mico-de-tufo-branco"
 subtitle = "Callithrix jacchus"
 description = "Este primata é nativo do Nordeste do Brasil, mas foi levado por humanos para outras regiões como animal de estimação ou atração turística. Em locais onde não existia naturalmente, compete com espécies como o mico-leão-dourado e pode se alimentar de ovos e filhotes de aves, causando desequilíbrios no ecossistema. Tem como predadores aves de rapina, serpentes e pequenos felinos. Apesar de ser brasileiro, torna-se invasor quando introduzido fora de sua área original."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -87,7 +107,12 @@ image = ExtResource("8_q6uxa")
 title = "Pombo-comum"
 subtitle = "Columba livia domestica"
 description = "O pombo-comum foi trazido ao Brasil pelos colonizadores portugueses no século XVI. Inicialmente mantido em gaiolas e usado como fonte de alimentação, ele acabou se espalhando pelas cidades. Atualmente vive em ambiente urbano e pode transmitir doenças como salmonelose, criptococose e histoplasmose. A alimentação inadequada feita por pessoas — como restos de comida e pão — favorece sua proliferação e prejudica tanto a saúde da ave quanto o equilíbrio ambiental."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -98,7 +123,12 @@ image = ExtResource("9_ek86p")
 title = "Mosquito-da-dengue"
 subtitle = "Aedes aegypti"
 description = "O Aedes aegypti é originário do Egito e se espalhou pelo mundo a partir do século XVI, durante as Grandes Navegações. Chegou ao Brasil entre os séculos XVII e XIX, trazido em navios que transportavam pessoas escravizadas e mercadorias. Seus ovos conseguem resistir até um ano sem água, o que facilitou sua disseminação. Hoje, transmite doenças como dengue, zika, chikungunya e febre amarela urbana. No Brasil, milhares de mortes são registradas todos os anos por essas doenças, tornando sua presença um grave problema de saúde pública."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -109,7 +139,12 @@ image = ExtResource("10_q6uxa")
 title = "Peixe-leão"
 subtitle = "Pterois volitans"
 description = "O peixe-leão é nativo do Indo-Pacífico e tornou-se uma espécie invasora no Oceano Atlântico após escapes de aquários e introduções acidentais no Caribe e nos Estados Unidos. Ele já foi registrado na costa brasileira, especialmente no Nordeste. Por ser um predador voraz e tóxico, ameaça peixes nativos, reduz a biodiversidade e desequilibra recifes de coral. Sua reprodução rápida e ausência de predadores naturais facilitam a expansão."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -120,7 +155,12 @@ image = ExtResource("11_wftyc")
 title = "Caramujo-gigante-africano"
 subtitle = "Achatina fulica"
 description = "O caramujo-gigante-africano foi introduzido no Brasil na década de 1980 como alternativa comercial ao escargot, mas rapidamente escapou e se espalhou. Ele devora plantações, destrói jardins e compete com espécies nativas. Além disso, pode transmitir doenças perigosas aos humanos, como meningite eosinofílica por meio de parasitas. Sua reprodução é rápida e resistente, o que dificulta o controle."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -131,7 +171,12 @@ image = ExtResource("12_sddms")
 title = "Periquito-australiano"
 subtitle = "Melopsittacus undulatus"
 description = "O periquito-australiano foi trazido ao Brasil como animal de estimação e acabou se espalhando após fugas e solturas. Em áreas urbanas e rurais, pode competir por alimento e espaço com aves nativas, além de formar bandos que prejudicam plantações e chocam ninhos de outras espécies. Sua presença fora da Austrália tem aumentado em várias regiões do mundo, especialmente em cidades."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -142,7 +187,12 @@ image = ExtResource("12_p1ivd")
 title = "acaco-rhesus"
 subtitle = "Macaca mulatta"
 description = "O macaco-rhesus é nativo da Ásia e foi levado para outros países por uso em pesquisas científicas, zoológicos e comércio ilegal. Com fugas e solturas, populações invasoras surgiram em locais como Flórida (EUA) e ilhas do Caribe. Essa espécie pode transmitir doenças perigosas, competir com animais locais e causar conflitos em áreas urbanas. Sua alta adaptação a ambientes humanos favorece a expansão."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -153,7 +203,12 @@ image = ExtResource("13_ml3ar")
 title = "Coral-sol"
 subtitle = "Tubastraea coccinea"
 description = "O coral-sol é originário da região do Indo-Pacífico e chegou ao Brasil por bioincrustação em cascos de navios e plataformas de petróleo. Foi registrado pela primeira vez no litoral do Rio de Janeiro e hoje se espalha por diversas regiões da costa brasileira. Ele cresce rapidamente sobre recifes e rochas, competindo com corais nativos e prejudicando a biodiversidade marinha ao impedir o desenvolvimento de outras espécies."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -164,7 +219,12 @@ image = ExtResource("14_ikgt4")
 title = "Sapo-cururu"
 subtitle = "Rhinella marina"
 description = "O sapo-cururu foi introduzido na Austrália e em outras regiões da Oceania na década de 1930 para combater insetos que atacavam plantações de cana-de-açúcar. Porém, tornou-se uma espécie invasora agressiva. É tóxico para predadores locais, se reproduz rapidamente e compete com espécies nativas por alimento e território. Sua expansão ameaça ecossistemas inteiros e dificulta o controle biológico natural."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -175,7 +235,12 @@ image = ExtResource("15_7y4f1")
 title = "Lesma-europeia"
 subtitle = "Arion vulgaris"
 description = "A lesma-europeia se espalhou para outros continentes através do transporte de plantas, solo e cargas agrícolas. Em áreas onde foi introduzida, compete com espécies nativas, devora plantações, hortas e mudas, além de transmitir parasitas que afetam animais e humanos. Sua reprodução rápida e resistência climática dificultam o controle."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -186,7 +251,12 @@ image = ExtResource("16_41dx5")
 title = "Coelho-europeu"
 subtitle = "Oryctolagus cuniculus"
 description = "O coelho-europeu foi introduzido em vários países para caça, alimentação e ornamentação. Na Austrália, sua introdução no século XIX resultou em uma das maiores pragas ambientais da história: eles destruíram pastagens, prejudicaram plantações, causaram erosão do solo e competiram com espécies nativas. Em muitos locais, sua população cresceu tão rápido que foi necessário o uso de vírus e cercas biológicas para tentar controlar a expansão."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -197,7 +267,12 @@ image = ExtResource("17_06cr2")
 title = "Rã-touro-americana"
 subtitle = "Lithobates catesbeianus"
 description = "A rã-touro foi introduzida em vários países para criação comercial e alimentação. No Brasil, escapou de criadouros e se espalhou em ambientes naturais. Ela se alimenta de peixes, insetos, aves, pequenas serpentes e outros anfíbios, competindo com espécies nativas. Sua alta reprodução, resistência e ausência de predadores naturais tornam o controle difícil e o impacto ambiental elevado."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -208,7 +283,12 @@ image = ExtResource("18_1ved8")
 title = "Carpa-comum"
 subtitle = "Cyprinus carpio"
 description = "A carpa-comum foi introduzida em vários países para pesca, aquicultura e ornamentação. No Brasil e em outras regiões, escapou para ambientes naturais e passou a competir com peixes nativos por alimento e espaço. Ela revolvem o fundo dos rios e lagos, aumenta a turbidez da água, destrói vegetação aquática e prejudica a reprodução de espécies locais. Sua resistência e adaptação tornam o controle complicado."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -219,7 +299,12 @@ image = ExtResource("19_bty3e")
 title = "Esquilo-cinzento"
 subtitle = "Sciurus carolinensis"
 description = "O esquilo-cinzento foi levado da América do Norte para a Europa como animal ornamental e de estimação. Acabou escapando ou sendo solto e se tornou invasor, competindo com espécies locais, como o esquilo-vermelho europeu. Ele destrói ninhos, devora ovos, descasca árvores e transmite doenças que afetam outras espécies. Sua expansão ameaça ecossistemas e biodiversidade nativa."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
@@ -230,7 +315,12 @@ image = ExtResource("19_bty3e")
 title = "Joaninha-asiática"
 subtitle = "Harmonia axyridis"
 description = "A joaninha-asiática foi introduzida em vários países para controle de pragas agrícolas, mas se espalhou e passou a competir com espécies nativas de joaninhas. Onde se estabelece, pode reduzir a diversidade local, invadir casas e até predar outros insetos benéficos. No Brasil, já é encontrada em diferentes estados e pode causar desequilíbrios ecológicos."
-success_text = "Você retornou o animal exótico brasileiro ao seu habitat natural na África ocidental!"
+success_text = "Você retornou o animal exótico ao seu habitat natural!
+
++ 5 pontos"
+incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
+
+-1 ponto"
 exotic_at = SubResource("Resource_cfsof")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"

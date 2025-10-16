@@ -14,12 +14,12 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_oln55")
 font_size = 32
 
-[sub_resource type="SystemFont" id="SystemFont_f6or4"]
+[sub_resource type="SystemFont" id="SystemFont_iu6nc"]
 font_names = PackedStringArray("Lucida Sans Typewriter")
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_bxtkf"]
-font = SubResource("SystemFont_f6or4")
+font = SubResource("SystemFont_iu6nc")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 

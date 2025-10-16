@@ -1,12 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7cdbmkh2fsi4"]
+[gd_scene load_steps=10 format=3 uid="uid://c7cdbmkh2fsi4"]
 
 [ext_resource type="Script" uid="uid://b42m3mfeb45tu" path="res://src/ui_manager.gd" id="1_qk0o7"]
 [ext_resource type="PackedScene" uid="uid://dcv8y2735jfvh" path="res://scenes/ui_components/dice_button.tscn" id="2_oln55"]
 [ext_resource type="PackedScene" uid="uid://0v40wa66q2kb" path="res://scenes/ui_components/inventory_slots.tscn" id="3_qk0o7"]
 [ext_resource type="PackedScene" uid="uid://ukoyl3cb5dnx" path="res://scenes/ui_components/animal_panel.tscn" id="4_uas5y"]
 [ext_resource type="PackedScene" uid="uid://3dduli1u6gru" path="res://scenes/ui_components/animated_dices.tscn" id="5_aw2gl"]
+[ext_resource type="Script" uid="uid://bjn6kkcc3cf7k" path="res://scenes/ranking.gd" id="6_qk0o7"]
 
-[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel", "animated_dice_manager", "dice_button")]
+[sub_resource type="SystemFont" id="SystemFont_f6or4"]
+font_names = PackedStringArray("Lucida Sans Typewriter")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oln55"]
+font = SubResource("SystemFont_f6or4")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uas5y"]
+font_color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel", "animated_dice_manager", "dice_button", "end_turn_button", "ask_selection", "skip_selection", "confirm_selection", "ranking")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +31,11 @@ inventory_slots = NodePath("InventorySlots")
 animal_panel = NodePath("AnimalPanel")
 animated_dice_manager = NodePath("AnimatedDices")
 dice_button = NodePath("DiceButton")
+end_turn_button = NodePath("AdvanceTurn")
+ask_selection = NodePath("AskSelection")
+skip_selection = NodePath("AskSelection/Button")
+confirm_selection = NodePath("AskSelection/Button2")
+ranking = NodePath("Ranking")
 
 [node name="DiceButton" parent="." instance=ExtResource("2_oln55")]
 layout_mode = 1
@@ -25,6 +43,107 @@ offset_left = -279.0
 offset_top = -265.0
 offset_right = -51.0
 offset_bottom = -43.0
+flat = false
+
+[node name="AdvanceTurn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -306.0
+offset_right = -105.974976
+offset_bottom = -274.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="AdvanceTurn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Avançar turno"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AskSelection" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AskSelection"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -482.0
+offset_top = 75.0
+offset_right = 482.0
+offset_bottom = 139.0
+grow_horizontal = 2
+text = " Selecione 1 animal para devolver ou pule seleção "
+label_settings = SubResource("LabelSettings_oln55")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+
+[node name="Outline" type="ColorRect" parent="AskSelection/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="AskSelection/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999997, 0.7472954, 0.2797986, 1)
+
+[node name="Button" type="Button" parent="AskSelection"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 41.99994
+offset_top = 178.0
+offset_right = 153.99994
+offset_bottom = 209.0
+grow_horizontal = 2
+scale = Vector2(1.7599988, 1.7599988)
+text = "Pular Seleção"
+
+[node name="Button2" type="Button" parent="AskSelection"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = 178.0
+offset_right = -91.0
+offset_bottom = 209.0
+grow_horizontal = 2
+scale = Vector2(1.7599988, 1.7599988)
+text = "Confirmar Seleção"
 
 [node name="InventorySlots" parent="." node_paths=PackedStringArray("ui_manager") instance=ExtResource("3_qk0o7")]
 layout_mode = 1
@@ -42,3 +161,105 @@ offset_right = 493.0
 [node name="AnimatedDices" parent="." instance=ExtResource("5_aw2gl")]
 visible = false
 layout_mode = 1
+
+[node name="Ranking" type="Control" parent="." node_paths=PackedStringArray("player_tracked", "player_values")]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 96.0
+offset_top = 100.0
+offset_right = 236.0
+offset_bottom = 251.64502
+script = ExtResource("6_qk0o7")
+player_tracked = [NodePath("VBoxContainer/HBoxContainer"), NodePath("VBoxContainer/HBoxContainer2"), NodePath("VBoxContainer/HBoxContainer3"), NodePath("VBoxContainer/HBoxContainer4")]
+player_values = [NodePath("VBoxContainer/HBoxContainer/Label3"), NodePath("VBoxContainer/HBoxContainer2/Label3"), NodePath("VBoxContainer/HBoxContainer3/Label3"), NodePath("VBoxContainer/HBoxContainer4/Label3")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ranking"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Ranking/VBoxContainer"]
+layout_mode = 2
+text = "Pontuações"
+label_settings = SubResource("LabelSettings_uas5y")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ranking/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Ranking/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Jogador 1:"
+
+[node name="Label3" type="Label" parent="Ranking/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Ranking/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Ranking/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Jogador 2:"
+
+[node name="Label3" type="Label" parent="Ranking/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Ranking/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Ranking/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Jogador 3:"
+
+[node name="Label3" type="Label" parent="Ranking/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Ranking/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Ranking/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Jogador 4:"
+
+[node name="Label3" type="Label" parent="Ranking/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Outline" type="ColorRect" parent="Ranking"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="Ranking"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999997, 0.7472954, 0.2797986, 1)

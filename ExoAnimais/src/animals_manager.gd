@@ -39,6 +39,9 @@ func return_animal_in(pos_index : int, is_native_search : bool = false) -> Anima
 	return animals[randi_range(0, len(animals)-1)]
 	
 
+func return_if_animal_is_native_from(animal : AnimalData, pos_index):
+	return true if animal in _get_native_animals_in(pos_index) else false
+
 func _ready():
 	var children = get_children()
 	

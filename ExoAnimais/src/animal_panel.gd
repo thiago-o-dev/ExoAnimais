@@ -24,7 +24,7 @@ var is_reopening : bool = false
 func close_animal_panel():
 	_is_opened = false
 
-func set_animal_data(data : AnimalData, is_return : bool = false):
+func set_animal_data(data : AnimalData, is_return : bool = false, is_return_success : bool = true):
 	if _is_opened:
 		is_reopening = true
 		close_animal_panel()
@@ -38,7 +38,10 @@ func set_animal_data(data : AnimalData, is_return : bool = false):
 	if !is_return:
 		description.text = data.description
 	else:
-		description.text = data.success_text
+		if is_return_success:
+			description.text = data.success_text
+		else:
+			description.text = data.incorrect_text
 
 func show_animal_panel():
 	if !is_reopening:

@@ -19,6 +19,9 @@ func tween_to(variable_name : String, target, duration: float) -> Tween:
 	t.tween_property(self, variable_name, target, duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	return t
 
+func tween_ended():
+	visible = false
+
 func roll_dices(values : Array[int]):
 	visible = true
 	tween_to("alpha", 1, fade_duration)
@@ -31,9 +34,6 @@ func _on_proceed_clicked():
 	t.finished.connect(tween_ended)
 	
 	emit_signal("on_proceed_clicked", get_selected_dices_value()) 
-
-func tween_ended():
-	visible = false
 
 func get_selected_dices_value() -> int:
 	var selected_dices = dices.filter(func (x : AnimatedDiceButton): return x.is_selected)

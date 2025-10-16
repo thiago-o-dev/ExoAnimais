@@ -1,0 +1,188 @@
+[gd_scene load_steps=11 format=3 uid="uid://ukoyl3cb5dnx"]
+
+[ext_resource type="Texture2D" uid="uid://cx8nsbdscjvhi" path="res://assets/animals/photos/javali_europeu_img.jpg" id="1_kq4r2"]
+
+[sub_resource type="SystemFont" id="SystemFont_qk0o7"]
+font_names = PackedStringArray("Lucida Sans")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uas5y"]
+font = SubResource("SystemFont_qk0o7")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_uas5y"]
+font_names = PackedStringArray("Lucida Fax")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw2gl"]
+paragraph_spacing = 15.0
+font = SubResource("SystemFont_uas5y")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_aw2gl"]
+font_names = PackedStringArray("Lucida Sans")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6or4"]
+paragraph_spacing = 15.0
+font = SubResource("SystemFont_aw2gl")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bxtkf"]
+blend_mode = 1
+
+[sub_resource type="SystemFont" id="SystemFont_2seet"]
+font_names = PackedStringArray("Lucida Sans Typewriter")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbdq6"]
+font = SubResource("SystemFont_2seet")
+font_color = Color(0, 0, 0, 1)
+
+[node name="AnimalPanel" type="Panel"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -515.0
+offset_top = -274.0
+offset_right = -107.0
+offset_bottom = 274.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Outline" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = 222.0
+grow_horizontal = 2
+texture = ExtResource("1_kq4r2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Outline" type="ColorRect" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3647059, 0.10980392, 0.05882353, 1)
+
+[node name="Fill" type="ColorRect" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7176471, 0.5294118, 0.18431373, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 233.0
+offset_right = 15.0
+offset_bottom = 263.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "Placeholder Title"
+label_settings = SubResource("LabelSettings_uas5y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 255.0
+offset_right = 15.0
+offset_bottom = 285.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "(Placius holdiers)"
+label_settings = SubResource("LabelSettings_aw2gl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 15.0
+offset_top = 297.0
+offset_right = 15.0
+offset_bottom = 327.0
+grow_horizontal = 2
+scale = Vector2(0.92, 1)
+text = "O Hemidactylus mabouia é proveniente da África ocidental e pode hoje ser encontrado no brasil como espécie invasora ao ter se escondido em navios mercantes durante o período colonial.
+Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
+label_settings = SubResource("LabelSettings_f6or4")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_bxtkf")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -41.680054
+offset_right = 60.0
+offset_bottom = -10.680054
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="NextButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prosseguir"
+label_settings = SubResource("LabelSettings_lbdq6")
+horizontal_alignment = 1
+vertical_alignment = 1

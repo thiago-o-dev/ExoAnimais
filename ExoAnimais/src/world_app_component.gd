@@ -5,6 +5,7 @@ extends Node
 @export var player_component : PlayerComponent
 @export var objects_manager : ObjectsManager
 @export var tile_path_2D : TilePath2D
+@export var ui_manager : UIManager
 
 @export_category("Game State Configurations")
 @export var current_turn : int = 1
@@ -89,4 +90,15 @@ func _log(text):
 func _landed_on_danger():
 	# adicionar AnimalData ao inventario do jogador
 	print("Landed on Danger")
-	print(animals_manager.return_animal_in(_check_player_landed_position()))
+	var animal : AnimalData = animals_manager.return_animal_in(_check_player_landed_position())
+	
+	if !ui_manager.add_animal_data_to_inventory(animal):
+		return
+	
+	ui_manager.import_animal_data_onto_animal_panel(animal)
+	is_ui_frozen = true
+	ui_manager.show_animal_panel()
+	
+
+func on_animal_panel_closed():
+	is_ui_frozen = false

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://ukoyl3cb5dnx"]
+[gd_scene load_steps=12 format=3 uid="uid://ukoyl3cb5dnx"]
 
+[ext_resource type="Script" uid="uid://bltoe52rhb86f" path="res://src/animal_panel.gd" id="1_6xx2n"]
 [ext_resource type="Texture2D" uid="uid://cx8nsbdscjvhi" path="res://assets/animals/photos/javali_europeu_img.jpg" id="1_kq4r2"]
 
 [sub_resource type="SystemFont" id="SystemFont_qk0o7"]
@@ -42,7 +43,7 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_2seet")
 font_color = Color(0, 0, 0, 1)
 
-[node name="AnimalPanel" type="Panel"]
+[node name="AnimalPanel" type="Panel" node_paths=PackedStringArray("image", "title", "subtitle", "description", "proceed_button")]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -50,10 +51,16 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -515.0
 offset_top = -274.0
-offset_right = -107.0
+offset_right = -106.99988
 offset_bottom = 274.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("1_6xx2n")
+image = NodePath("TextureRect")
+title = NodePath("Title")
+subtitle = NodePath("Subtitle")
+description = NodePath("Description")
+proceed_button = NodePath("NextButton")
 
 [node name="Outline" type="ColorRect" parent="."]
 layout_mode = 1

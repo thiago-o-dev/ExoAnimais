@@ -1,36 +1,45 @@
 extends Control
 class_name UIManager
 
+@export_category("Components")
 @export var inventory_slots : InventorySlots
-const inv_ui_max_x : float = -32.0
-const inv_ui_min_x : float = -691.0
-const inv_slots : int = 4
+@export var animal_panel : AnimalPanel
 
-var step = abs((inv_ui_max_x - inv_ui_min_x)/inv_slots) # 164.75
+@export_category("Configurations")
 @export var filled_inv_slots : int = 0
+@export var is_ui_frozen : bool = false
 
-func open_open_animal_data(data : AnimalData):
-	pass
+func add_animal_data_to_inventory(data : AnimalData):
+	if !data:
+		return
+	
+	if !inventory_slots.add_animal_data(data):
+		return false
+	open_animal_data(data)
+	return true
 
-func close_animal_data():
-	pass
+func open_animal_data(data : AnimalData):
+	if !data:
+		inventory_slots.deselect_all()
+		return
+	
+	animal_panel.set_animal_data(data)
+	animal_panel.show_animal_panel()
+
+func close_animal_datas():
+	animal_panel.close_animal_panel()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-var filled_slots_queue : Array[int]
-func add_to_filled_slots_queue(quantity : int):
-	filled_slots_queue.append(quantity)
-
-func set_filled_slots_data():
-	# pegar array animal data até 4
-	pass
+func update_inventory_slots_fill(quantity : int):
+	filled_inv_slots = quantity
 
 func _process(_delta):
-	if (!filled_slots_queue.is_empty() and inventory_slots.position.x == inv_ui_min_x + step * filled_inv_slots):
-		filled_inv_slots = filled_slots_queue.pop_front()
+	is_ui_frozen = false
 	
-	inventory_slots.position.x = lerp(inventory_slots.position.x, inventory_slots + step * filled_inv_slots, 0.1)
+	if animal_panel._is_opened:
+		is_ui_frozen = true
 	
-	#TODO: animar dados 
+	inventory_slots.filled_inv_slots = filled_inv_slots

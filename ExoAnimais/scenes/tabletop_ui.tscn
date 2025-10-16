@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ukoyl3cb5dnx" path="res://scenes/ui_components/animal_panel.tscn" id="4_uas5y"]
 [ext_resource type="PackedScene" uid="uid://3dduli1u6gru" path="res://scenes/ui_components/animated_dices.tscn" id="5_aw2gl"]
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,51 +14,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qk0o7")
-filled_inv_slots = 4
+inventory_slots = NodePath("InventorySlots")
+animal_panel = NodePath("AnimalPanel")
 
 [node name="Dices" parent="." instance=ExtResource("2_oln55")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 228.0
-offset_bottom = 222.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
+offset_left = -279.0
+offset_top = -265.0
+offset_right = -51.0
+offset_bottom = -43.0
 
-[node name="InventorySlots" parent="." instance=ExtResource("3_qk0o7")]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 979.0
-offset_bottom = 223.0
-grow_vertical = 1
+[node name="InventorySlots" parent="." node_paths=PackedStringArray("ui_manager") instance=ExtResource("3_qk0o7")]
+layout_mode = 1
+offset_left = -39.999996
+offset_top = -223.0
+offset_right = 939.0
+offset_bottom = 0.0
+ui_manager = NodePath("..")
 
 [node name="AnimalPanel" parent="." instance=ExtResource("4_uas5y")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 408.0
-offset_bottom = 548.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
+offset_left = 85.0
+offset_right = 493.0
 
 [node name="AnimatedDices" parent="." instance=ExtResource("5_aw2gl")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+visible = false
+layout_mode = 1

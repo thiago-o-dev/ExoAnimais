@@ -15,7 +15,7 @@ offset_bottom = 2.000061
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_3w38p")
-slot_buttons = [NodePath("HBoxContainer/Button"), NodePath("HBoxContainer/Button2"), NodePath("HBoxContainer/Button3"), NodePath("HBoxContainer/Button4")]
+slot_buttons = [NodePath("HBoxContainer/Button4"), NodePath("HBoxContainer/Button3"), NodePath("HBoxContainer/Button2"), NodePath("HBoxContainer/Button")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

@@ -28,12 +28,13 @@ point_count = 20
 
 [node name="Tabletop" type="Node2D"]
 
-[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("animals_manager", "player_component", "objects_manager", "tile_path_2D")]
+[node name="WorldAppComponent" type="Node" parent="." node_paths=PackedStringArray("animals_manager", "player_component", "objects_manager", "tile_path_2D", "ui_manager")]
 script = ExtResource("5_07fvr")
 animals_manager = NodePath("../AnimalsManager")
 player_component = NodePath("../PlayerComponent")
 objects_manager = NodePath("../ObjectsManager")
 tile_path_2D = NodePath("../TilePath2DComponent")
+ui_manager = NodePath("../CanvasLayer/UI")
 player_quantity = 2
 
 [node name="Tabletop" type="Sprite2D" parent="."]

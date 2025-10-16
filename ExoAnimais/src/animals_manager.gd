@@ -36,7 +36,7 @@ func return_animal_in(pos_index : int, is_native_search : bool = false) -> Anima
 	if animals.is_empty():
 		return null
 	
-	return animals[randi_range(0, len(animals))]
+	return animals[randi_range(0, len(animals)-1)]
 	
 
 func _ready():

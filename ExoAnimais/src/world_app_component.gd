@@ -12,11 +12,17 @@ extends Node
 var is_player_moving = false
 var animation_delay : float = 0
 var object_type_to_act_on_move_end : ObjectGroup.ObjectType = ObjectGroup.ObjectType.NONE
-var is_ui_frozen : bool = false
 
 @export_category("Player Configurations")
 @export var player_quantity : int = 1
-@export var player_inventory_capacity : int = 4
+@export var filled_inventory_queue : Array[int] = [0,0,0,0]
+
+class InventoryGroup:
+	var slots : Array[AnimalData] = [null, null, null, null]
+
+var inventory_datas : Array[InventoryGroup] = [
+		InventoryGroup.new(), InventoryGroup.new(), InventoryGroup.new(), InventoryGroup.new()
+	]
 
 @export_category("Information")
 @export var debug : bool = true
@@ -45,27 +51,30 @@ func _check_player_landed_position():
 	return player_component.get_current_player_position()
 
 func _start_next_turn():
-	player_component.switch_to_next_player()
 	current_turn += 1
+	player_component.switch_to_next_player()
+	
+	var i = player_component.current_player_index
+	
+	ui_manager.update_inventory_slots_fill(0)
+	await get_tree().create_timer(.1*filled_inventory_queue[i]).timeout
+	ui_manager.set_inventory(inventory_datas[i].slots)
+	ui_manager.update_inventory_slots_fill(filled_inventory_queue[i]) 
+	
 
 func _process(delta):
 	current_delay = max(0, current_delay - delta)
 	animation_delay = max(0, animation_delay - delta)
 	
-	if is_ui_frozen:
+	if ui_manager.is_ui_frozen:
 		return
 	
-	var direction : int = Input.get_axis("ui_left", "ui_right")
+	var direction : int = int(Input.get_axis("ui_left", "ui_right"))
 	
 	if tile_path_2D.path_positions.is_empty():
 		push_warning("TILEPATH NOT INSTANCIATED")
 		return
 	
-	if direction != 0 and current_delay == 0 and animation_delay == 0:
-		_roll_dice(-direction)
-		current_delay = movement_delay
-		is_player_moving = true
-		return
 	
 	if is_player_moving and animation_delay == 0:
 		is_player_moving = false
@@ -83,6 +92,12 @@ func _process(delta):
 		_start_next_turn()
 		return
 
+	if direction != 0 and current_delay == 0 and animation_delay == 0:
+		_roll_dice(-direction)
+		current_delay = movement_delay
+		is_player_moving = true
+		return
+
 func _log(text):
 	if debug:
 		print(text)
@@ -92,13 +107,7 @@ func _landed_on_danger():
 	print("Landed on Danger")
 	var animal : AnimalData = animals_manager.return_animal_in(_check_player_landed_position())
 	
+	print(animal)
+	
 	if !ui_manager.add_animal_data_to_inventory(animal):
 		return
-	
-	ui_manager.import_animal_data_onto_animal_panel(animal)
-	is_ui_frozen = true
-	ui_manager.show_animal_panel()
-	
-
-func on_animal_panel_closed():
-	is_ui_frozen = false

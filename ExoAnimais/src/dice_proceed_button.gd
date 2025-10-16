@@ -4,7 +4,6 @@ extends Button
 #map(func (x): return x + Vector2(0, -8))
 func _on_pressed():
 	if (dices.any(_check_dice_state)):
-		#release_focus()
 		return
 	
 	print("success")

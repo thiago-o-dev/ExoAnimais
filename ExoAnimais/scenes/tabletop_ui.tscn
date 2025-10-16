@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0v40wa66q2kb" path="res://scenes/ui_components/inventory_slots.tscn" id="3_qk0o7"]
 [ext_resource type="PackedScene" uid="uid://ukoyl3cb5dnx" path="res://scenes/ui_components/animal_panel.tscn" id="4_uas5y"]
 [ext_resource type="PackedScene" uid="uid://3dduli1u6gru" path="res://scenes/ui_components/animated_dices.tscn" id="5_aw2gl"]
-[ext_resource type="Script" uid="uid://bjn6kkcc3cf7k" path="res://scenes/ranking.gd" id="6_qk0o7"]
+[ext_resource type="Script" uid="uid://bjn6kkcc3cf7k" path="res://src/ranking.gd" id="6_qk0o7"]
 
 [sub_resource type="SystemFont" id="SystemFont_f6or4"]
 font_names = PackedStringArray("Lucida Sans Typewriter")

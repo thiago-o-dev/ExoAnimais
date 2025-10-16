@@ -295,7 +295,6 @@ tile_path = NodePath("../../TilePath2DComponent")
 object_manager = NodePath("..")
 type = 2
 assign_radius = 64.0
-draw_gizmos = true
 
 [node name="Trees" type="Node2D" parent="ObjectsManager/Forest"]
 position = Vector2(-434, 98)

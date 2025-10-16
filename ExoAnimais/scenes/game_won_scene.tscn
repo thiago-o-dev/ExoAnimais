@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dxp6o7wm4epy7"]
+
+[node name="GameWonScene" type="Node2D"]

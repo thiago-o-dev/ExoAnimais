@@ -9,12 +9,14 @@ extends Node
 
 @export_category("Game State Configurations")
 @export var current_turn : int = 1
+@export var points_to_add_when_won : int = 30
 @export var points_to_add_when_right : int = 5
 @export var points_to_add_when_wrong : int = -1
 var is_player_moving = false
 var animation_delay : float = 0
 var object_type_to_act_on_move_end : ObjectGroup.ObjectType = ObjectGroup.ObjectType.NONE
 var player_already_moved : bool = false
+var game_end_reached : bool = false
 
 @export_category("Player Configurations")
 @export var player_quantity : int = 1
@@ -91,11 +93,18 @@ func _move_player_to(pos_increment : int):
 	is_player_moving = true
 	
 	var player_position = _check_player_landed_position()
+	if player_position == len(tile_path_2D.path_positions):
+		game_end_reached = true
+		player_points[get_curr_player()] += points_to_add_when_won
+		
 	print("is moving to ",player_position)
 	object_type_to_act_on_move_end = objects_manager.get_object_in_pos(player_position)
 
 func _check_player_landed_position():
 	return player_component.get_current_player_position()
+
+func _send_players_to_game_won_screen():
+	print("game ended")
 
 func _start_next_turn():
 	current_turn += 1
@@ -104,6 +113,9 @@ func _start_next_turn():
 	var i = player_component.current_player_index
 	
 	ui_manager.set_inventory(inventory_datas[i].slots, true)
+	
+	if game_end_reached and current_turn % player_quantity == 1:
+		_send_players_to_game_won_screen()
 	
 	player_component.set_indicator_to_player(get_curr_player())
 	player_component._set_camera_to_follow_player(get_curr_player())

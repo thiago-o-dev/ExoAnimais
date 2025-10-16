@@ -19,26 +19,30 @@ class_name AnimalPanel
 @export var closed_x_position : float = 1621.0
 @export var weight : float = 0.1
 var is_ui_frozen : bool = false
+var is_reopening : bool = false
 
 func close_animal_panel():
 	_is_opened = false
 
-func set_animal_data(data : AnimalData, is_exotic : bool = true):
+func set_animal_data(data : AnimalData, is_return : bool = false):
 	if _is_opened:
+		is_reopening = true
 		close_animal_panel()
 		await get_tree().create_timer(.3).timeout
+		is_reopening = false
 		show_animal_panel()
 	
 	image.texture = data.image
 	title.text = data.title
 	subtitle.text = data.subtitle
-	if is_exotic:
+	if !is_return:
 		description.text = data.description
 	else:
 		description.text = data.success_text
 
 func show_animal_panel():
-	_is_opened = true
+	if !is_reopening:
+		_is_opened = true
 
 func _on_proceed_pressed():
 	close_animal_panel()

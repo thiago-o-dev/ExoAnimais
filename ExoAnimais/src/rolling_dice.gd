@@ -33,7 +33,7 @@ func _update_visual_state():
 @export var right_side : TextureRect
 @export var right_side_dice : TextureRect
 @export var dice_textures_folder : String = "res://assets/ui/dice_sprites"
-@export var animation_time : float = 5.0       # total animation time across all rotations
+@export var animation_time : float = 2      # total animation time across all rotations
 @export var selected_border_color : Color = Color(0.2, 0.8, 1.0) # light blue border when selected
 @export var border_thickness : int = 4
 
@@ -55,6 +55,7 @@ var time : float = 2.0                         # seconds (not used directly; kep
 var dice_queue : Array[int] = []
 
 var is_spinning : bool = false
+var value : int = 1
 
 # -----------------------------
 # Utilities / lifecycle
@@ -109,6 +110,7 @@ func _dice_roll() -> int:
 	return randi_range(1, 6)
 
 func create_dice_queue(last: int = -1):
+	can_spin = true
 	dice_queue.clear()
 	for i in range(randi_range(rotations_rand_len.x, rotations_rand_len.y)):
 		var roll : int = _dice_roll()
@@ -118,11 +120,13 @@ func create_dice_queue(last: int = -1):
 			while roll == dice_queue[dice_queue.size() - 1]:
 				roll = _dice_roll()
 		dice_queue.append(roll)
-
+	
 	if last != -1:
 		# append a final forced value
 		if dice_queue.size() == 0 or dice_queue[dice_queue.size() - 1] != last:
 			dice_queue.append(last)
+		
+	value = dice_queue.back()
 
 	# compute rate relative to animation_time
 	if animation_time > 0:

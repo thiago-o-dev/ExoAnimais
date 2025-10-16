@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0v40wa66q2kb"]
 
-[ext_resource type="Script" uid="uid://38rjxa5dme0c" path="res://inventory_slots.gd" id="1_3w38p"]
+[ext_resource type="Script" uid="uid://38rjxa5dme0c" path="res://src/inventory_slots.gd" id="1_3w38p"]
 [ext_resource type="Texture2D" uid="uid://cd02fctqi5i6q" path="res://assets/ui/card_inventory.svg" id="1_joxd1"]
 
 [node name="InventorySlots" type="Panel" node_paths=PackedStringArray("slot_buttons")]

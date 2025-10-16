@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7cdbmkh2fsi4"]
 
 [ext_resource type="Script" uid="uid://b42m3mfeb45tu" path="res://src/ui_manager.gd" id="1_qk0o7"]
-[ext_resource type="PackedScene" uid="uid://dcv8y2735jfvh" path="res://scenes/ui_components/dices.tscn" id="2_oln55"]
+[ext_resource type="PackedScene" uid="uid://dcv8y2735jfvh" path="res://scenes/ui_components/dice_button.tscn" id="2_oln55"]
 [ext_resource type="PackedScene" uid="uid://0v40wa66q2kb" path="res://scenes/ui_components/inventory_slots.tscn" id="3_qk0o7"]
 [ext_resource type="PackedScene" uid="uid://ukoyl3cb5dnx" path="res://scenes/ui_components/animal_panel.tscn" id="4_uas5y"]
 [ext_resource type="PackedScene" uid="uid://3dduli1u6gru" path="res://scenes/ui_components/animated_dices.tscn" id="5_aw2gl"]
 
-[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel")]
+[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel", "animated_dice_manager", "dice_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,8 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_qk0o7")
 inventory_slots = NodePath("InventorySlots")
 animal_panel = NodePath("AnimalPanel")
+animated_dice_manager = NodePath("AnimatedDices")
+dice_button = NodePath("DiceButton")
 
-[node name="Dices" parent="." instance=ExtResource("2_oln55")]
+[node name="DiceButton" parent="." instance=ExtResource("2_oln55")]
 layout_mode = 1
 offset_left = -279.0
 offset_top = -265.0
@@ -26,9 +28,9 @@ offset_bottom = -43.0
 
 [node name="InventorySlots" parent="." node_paths=PackedStringArray("ui_manager") instance=ExtResource("3_qk0o7")]
 layout_mode = 1
-offset_left = -39.999996
+offset_left = -692.99994
 offset_top = -223.0
-offset_right = 939.0
+offset_right = 286.00006
 offset_bottom = 0.0
 ui_manager = NodePath("..")
 

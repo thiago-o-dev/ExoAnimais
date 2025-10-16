@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcv8y2735jfvh"]
+
+[ext_resource type="Texture2D" uid="uid://ddc5or468jcrc" path="res://assets/ui/dice.svg" id="2_kunva"]
+[ext_resource type="Texture2D" uid="uid://byg25tnwvp50k" path="res://assets/ui/dice_shadow.svg" id="3_0yrs1"]
+
+[node name="Button" type="Button"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -314.0
+offset_right = -106.0
+offset_bottom = -92.0
+grow_horizontal = 0
+grow_vertical = 0
+action_mode = 0
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 48.0
+offset_right = 1233.0
+offset_bottom = 1416.0
+rotation = 0.32925472
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kunva")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 80.0
+offset_right = 118.0
+offset_bottom = 134.0
+rotation = -0.00023753941
+scale = Vector2(1.796, 1.796)
+texture = ExtResource("3_0yrs1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 57.0
+offset_right = 1256.0
+offset_bottom = 1425.0
+rotation = -0.33515677
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kunva")

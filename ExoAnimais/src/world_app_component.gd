@@ -12,10 +12,13 @@ extends Node
 var is_player_moving = false
 var animation_delay : float = 0
 var object_type_to_act_on_move_end : ObjectGroup.ObjectType = ObjectGroup.ObjectType.NONE
+var player_already_moved : bool = false
 
 @export_category("Player Configurations")
 @export var player_quantity : int = 1
 @export var filled_inventory_queue : Array[int] = [0,0,0,0]
+@export var player_points : Array[int] = [0,0,0,0]
+@export var is_returning : bool = false
 
 class InventoryGroup:
 	var slots : Array[AnimalData] = [null, null, null, null]
@@ -33,6 +36,37 @@ var current_delay = 0
 
 func _ready():
 	player_component.start_players(player_quantity)
+	ui_manager.dice_button.connect("pressed", Callable(self, "_on_dice_button_click"))
+	ui_manager.animated_dice_manager.on_proceed_clicked.connect(_selected_dice_movement)
+	ui_manager.inventory_slots.on_animal_slot_pressed.connect(_on_inventory_slot_pressed)
+
+func _on_inventory_slot_pressed(index : int):
+	if !is_returning:
+		return
+	
+	ui_manager.open_animal_data(inventory_datas[get_curr_player()].slots[index], true)
+	inventory_datas[get_curr_player()].slots.remove_at(index)
+	inventory_datas[get_curr_player()].slots.append(InventoryGroup.new())
+	ui_manager.set_inventory(inventory_datas[get_curr_player()].slots)
+
+func _on_dice_button_click():
+	if player_already_moved:
+		return
+	
+	if ui_manager.is_ui_frozen:
+		return
+	
+	ui_manager.is_ui_frozen = true
+	
+	print("Dice button was clicked")
+	ui_manager.roll_dices([-1, -1])
+	
+	ui_manager.animated_dice_manager.proceed_button.set_pressed_no_signal(false)
+	
+func _selected_dice_movement(pos_increment : int):
+	player_already_moved = true
+	ui_manager.is_ui_frozen = false
+	_move_player_to(pos_increment)
 
 func _roll_dice(direction : int = 1, from : int = 1, to : int = 6):
 	var dice_result : int = randi_range(from, to)
@@ -56,10 +90,10 @@ func _start_next_turn():
 	
 	var i = player_component.current_player_index
 	
-	ui_manager.update_inventory_slots_fill(0)
-	await get_tree().create_timer(.1*filled_inventory_queue[i]).timeout
-	ui_manager.set_inventory(inventory_datas[i].slots)
-	ui_manager.update_inventory_slots_fill(filled_inventory_queue[i]) 
+	ui_manager.set_inventory(inventory_datas[i].slots, true)
+	
+	player_component.set_indicator_to_player(get_curr_player())
+	player_component._set_camera_to_follow_player(get_curr_player())
 	
 
 func _process(delta):
@@ -83,25 +117,56 @@ func _process(delta):
 		
 		match(object_type_to_act_on_move_end):
 			ObjectGroup.ObjectType.NONE:
-				pass
+				_landed_on_forest()
 			ObjectGroup.ObjectType.DANGER:
 				_landed_on_danger()
 			ObjectGroup.ObjectType.FOREST:
 				pass
-		
-		_start_next_turn()
 		return
 
-	if direction != 0 and current_delay == 0 and animation_delay == 0:
+	if direction != 0 and current_delay == 0 and animation_delay == 0 and !player_already_moved:
+		player_already_moved = true
 		_roll_dice(-direction)
 		current_delay = movement_delay
 		is_player_moving = true
 		return
+		
+	if player_already_moved and direction != 0 and current_delay == 0 and animation_delay == 0:
+		_start_next_turn()
+		player_already_moved = false
+		current_delay = .2
+		return
+		
 
 func _log(text):
 	if debug:
 		print(text)
-		
+
+func get_curr_player():
+	return player_component.current_player_index
+
+func get_player_inv():
+	return inventory_datas[get_curr_player()].slots
+
+func get_player_inv_size():
+	return len(get_player_inv().filter(func (x): return x))
+
+func add_animal_data(data : AnimalData) -> bool:
+	var free_position = inventory_datas[get_curr_player()].slots.find(null)
+	
+	if free_position == -1:
+		return false
+	
+	inventory_datas[get_curr_player()].slots[free_position] = data
+	return true
+
+func _landed_on_forest():
+	print("Landed on Forest")
+	
+	#request to select an animal
+	
+	#ui_manager.open_animal_data(animal, true)
+
 func _landed_on_danger():
 	# adicionar AnimalData ao inventario do jogador
 	print("Landed on Danger")
@@ -109,5 +174,9 @@ func _landed_on_danger():
 	
 	print(animal)
 	
-	if !ui_manager.add_animal_data_to_inventory(animal):
+	if !add_animal_data(animal):
 		return
+	
+	ui_manager.set_inventory(get_player_inv())
+	ui_manager.open_animal_data(animal)
+	print(get_player_inv_size())

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://3dduli1u6gru"]
 
-[ext_resource type="Script" uid="uid://2di2wmxsa7pa" path="res://src/dices_buttons_manager.gd" id="1_iu6nc"]
+[ext_resource type="Script" uid="uid://yv4m1l1vxpq0" path="res://src/animated_dices_manager.gd" id="1_xkyw2"]
 [ext_resource type="Script" uid="uid://go22dybjwxpl" path="res://src/rolling_dice.gd" id="2_xkyw2"]
 [ext_resource type="Texture2D" uid="uid://20pljdtgii6y" path="res://assets/ui/dice_sprites/Separator/background.svg" id="3_cvjfc"]
 [ext_resource type="Texture2D" uid="uid://cihtrbtxbphjh" path="res://assets/ui/dice_sprites/6.svg" id="4_vi3bb"]
@@ -23,13 +23,16 @@ font = SubResource("SystemFont_f6or4")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
-[node name="AnimatedDices" type="Panel"]
+[node name="AnimatedDices" type="Panel" node_paths=PackedStringArray("dices", "proceed_button")]
 self_modulate = Color(0.92253196, 0.31940988, 1.92523e-07, 0.6039216)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xkyw2")
+dices = [NodePath("Dices/Dice1"), NodePath("Dices/Dice2")]
+proceed_button = NodePath("Proceed")
 
 [node name="Dices" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -37,7 +40,6 @@ offset_top = 362.0
 offset_right = 1536.0
 offset_bottom = 490.0
 alignment = 1
-script = ExtResource("1_iu6nc")
 
 [node name="Dice1" type="Button" parent="Dices" node_paths=PackedStringArray("left_side", "left_side_dice", "right_side", "right_side_dice")]
 custom_minimum_size = Vector2(128, 128)
@@ -176,7 +178,6 @@ offset_right = 120.0
 offset_bottom = -254.0
 grow_horizontal = 2
 grow_vertical = 0
-flat = true
 script = ExtResource("5_byhc2")
 
 [node name="Label" type="Label" parent="Proceed"]
@@ -192,6 +193,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Outline" type="ColorRect" parent="Proceed"]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -206,6 +208,7 @@ grow_vertical = 2
 color = Color(0.3647059, 0.10980392, 0.05882353, 1)
 
 [node name="Fill" type="ColorRect" parent="Proceed"]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvudaajrjry6k"]
+[gd_scene load_steps=45 format=3 uid="uid://dvudaajrjry6k"]
 
 [ext_resource type="Script" uid="uid://bxi1010nrd5p6" path="res://src/animals_manager.gd" id="1_011m4"]
 [ext_resource type="Script" uid="uid://54b6j6uhcowo" path="res://src/animal_data.gd" id="1_qtkit"]
@@ -21,14 +21,124 @@
 [ext_resource type="Texture2D" uid="uid://chsrn1vpjco05" path="res://assets/animals/photos/carpa_comum.jpeg" id="18_1ved8"]
 [ext_resource type="Texture2D" uid="uid://bm8dojk2bqhxs" path="res://assets/animals/photos/esquilo-cinzento.jpeg" id="19_bty3e"]
 
+[sub_resource type="Resource" id="Resource_1jij0"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 33), Vector2i(174, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_fawku"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(42, 61), Vector2i(145, 163), Vector2i(84, 93), Vector2i(113, 123)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_sddms"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 12), Vector2i(192, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_y3n5f"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(61, 72), Vector2i(134, 143)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_mbmis"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 33), Vector2i(174, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_72xbc"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(42, 61), Vector2i(145, 163), Vector2i(84, 93), Vector2i(113, 123)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_633vk"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 13), Vector2i(192, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_vgw0x"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 13), Vector2i(192, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_vphjh"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 33), Vector2i(174, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_2tddg"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(43, 94), Vector2i(113, 165)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_rcpqn"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_anbof"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(58, 72), Vector2i(134, 163)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
 [sub_resource type="Resource" id="Resource_cfsof"]
 script = ExtResource("3_3f28n")
-ranges = Array[Vector2i]([Vector2i(0, 12)])
+ranges = Array[Vector2i]([Vector2i(34, 173)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_ci0yr"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 30), Vector2i(174, 203)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_v2r67"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 33), Vector2i(173, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_1g4p6"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(60, 83), Vector2i(123, 147)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_cs8y0"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 90), Vector2i(116, 204)])
 metadata/_custom_type_script = "uid://su5fjmlnij6b"
 
 [sub_resource type="Resource" id="Resource_3f28n"]
 script = ExtResource("3_3f28n")
-ranges = Array[Vector2i]([Vector2i(0, 32)])
+ranges = Array[Vector2i]([Vector2i(93, 113)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_lhcqu"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(14, 33), Vector2i(174, 192)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_caad3"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(84, 98), Vector2i(108, 122)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_wl5om"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 13), Vector2i(192, 205)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_alybn"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 31), Vector2i(174, 204)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_reerm"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(91, 115)])
+metadata/_custom_type_script = "uid://su5fjmlnij6b"
+
+[sub_resource type="Resource" id="Resource_hqm7u"]
+script = ExtResource("3_3f28n")
+ranges = Array[Vector2i]([Vector2i(0, 19), Vector2i(187, 204)])
 metadata/_custom_type_script = "uid://su5fjmlnij6b"
 
 [node name="AnimalsManager" type="Node"]
@@ -47,8 +157,8 @@ success_text = "Você retornou o animal exótico ao seu habitat natural!
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_1jij0")
+native_at = SubResource("Resource_fawku")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="LagartixaDomestica" type="Node" parent="."]
@@ -64,11 +174,11 @@ success_text = "Você retornou o animal exótico ao seu habitat natural!
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_sddms")
+native_at = SubResource("Resource_y3n5f")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
-[node name="Cabra" type="Node" parent="."]
+[node name="e-Cabra" type="Node" parent="."]
 script = ExtResource("1_qtkit")
 image = ExtResource("6_cnfq0")
 title = "Cabra"
@@ -81,8 +191,8 @@ success_text = "Você retornou o animal exótico ao seu habitat natural!
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_mbmis")
+native_at = SubResource("Resource_72xbc")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="MicoDeTufoBranco" type="Node" parent="."]
@@ -90,15 +200,16 @@ script = ExtResource("1_qtkit")
 image = ExtResource("7_ek86p")
 title = "Mico-de-tufo-branco"
 subtitle = "Callithrix jacchus"
-description = "Este primata é nativo do Nordeste do Brasil, mas foi levado por humanos para outras regiões como animal de estimação ou atração turística. Em locais onde não existia naturalmente, compete com espécies como o mico-leão-dourado e pode se alimentar de ovos e filhotes de aves, causando desequilíbrios no ecossistema. Tem como predadores aves de rapina, serpentes e pequenos felinos. Apesar de ser brasileiro, torna-se invasor quando introduzido fora de sua área original."
+description = "Este primata é nativo do Nordeste do Brasil mas foi levado por humanos para outras regiões como animal de estimação ou atração turística. Em locais onde não existia naturalmente, compete com espécies como o mico-leão-dourado e pode se alimentar de ovos e filhotes de aves, causando desequilíbrios no ecossistema. Tem como predadores aves de rapina, serpentes e pequenos felinos. 
+Apesar de ser brasileiro, torna-se invasor na mata atlantica."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_633vk")
+native_at = SubResource("Resource_vgw0x")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="PomboComum" type="Node" parent="."]
@@ -106,15 +217,15 @@ script = ExtResource("1_qtkit")
 image = ExtResource("8_q6uxa")
 title = "Pombo-comum"
 subtitle = "Columba livia domestica"
-description = "O pombo-comum foi trazido ao Brasil pelos colonizadores portugueses no século XVI. Inicialmente mantido em gaiolas e usado como fonte de alimentação, ele acabou se espalhando pelas cidades. Atualmente vive em ambiente urbano e pode transmitir doenças como salmonelose, criptococose e histoplasmose. A alimentação inadequada feita por pessoas — como restos de comida e pão — favorece sua proliferação e prejudica tanto a saúde da ave quanto o equilíbrio ambiental."
+description = "O pombo-comum da África e Eurásia foi trazido ao Brasil pelos colonizadores portugueses no século XVI. Inicialmente mantido em gaiolas e usado como fonte de alimentação, ele acabou se espalhando pelas cidades. Atualmente vive em ambiente urbano e pode transmitir doenças como salmonelose, criptococose e histoplasmose. A alimentação inadequada feita por pessoas — como restos de comida e pão — favorece sua proliferação e prejudica tanto a saúde da ave quanto o equilíbrio ambiental."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_vphjh")
+native_at = SubResource("Resource_2tddg")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="MosquitoDaDengue" type="Node" parent="."]
@@ -122,15 +233,15 @@ script = ExtResource("1_qtkit")
 image = ExtResource("9_ek86p")
 title = "Mosquito-da-dengue"
 subtitle = "Aedes aegypti"
-description = "O Aedes aegypti é originário do Egito e se espalhou pelo mundo a partir do século XVI, durante as Grandes Navegações. Chegou ao Brasil entre os séculos XVII e XIX, trazido em navios que transportavam pessoas escravizadas e mercadorias. Seus ovos conseguem resistir até um ano sem água, o que facilitou sua disseminação. Hoje, transmite doenças como dengue, zika, chikungunya e febre amarela urbana. No Brasil, milhares de mortes são registradas todos os anos por essas doenças, tornando sua presença um grave problema de saúde pública."
+description = "O Aedes aegypti é originário do Egito e se espalhou pelo mundo todo a partir do século XVI, durante as Grandes Navegações. Chegou ao Brasil entre os séculos XVII e XIX, trazido em navios que transportavam pessoas escravizadas e mercadorias. Seus ovos conseguem resistir até um ano sem água, o que facilitou sua disseminação. Hoje, transmite doenças como dengue, zika, chikungunya e febre amarela urbana. No Brasil, milhares de mortes são registradas todos os anos por essas doenças, tornando sua presença um grave problema de saúde pública."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_rcpqn")
+native_at = SubResource("Resource_anbof")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="PeixeLeao" type="Node" parent="."]
@@ -146,7 +257,7 @@ incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
 exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+native_at = SubResource("Resource_ci0yr")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="CaramujoGiganteAfricano" type="Node" parent="."]
@@ -154,15 +265,15 @@ script = ExtResource("1_qtkit")
 image = ExtResource("11_wftyc")
 title = "Caramujo-gigante-africano"
 subtitle = "Achatina fulica"
-description = "O caramujo-gigante-africano foi introduzido no Brasil na década de 1980 como alternativa comercial ao escargot, mas rapidamente escapou e se espalhou. Ele devora plantações, destrói jardins e compete com espécies nativas. Além disso, pode transmitir doenças perigosas aos humanos, como meningite eosinofílica por meio de parasitas. Sua reprodução é rápida e resistente, o que dificulta o controle."
+description = "O caramujo-gigante-africano foi introduzido nas Américas na década de 1980 como alternativa comercial ao escargot, mas rapidamente escapou e se espalhou. Ele devora plantações, destrói jardins e compete com espécies nativas. Além disso, pode transmitir doenças perigosas aos humanos, como meningite eosinofílica por meio de parasitas. Sua reprodução é rápida e resistente, o que dificulta o controle."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_v2r67")
+native_at = SubResource("Resource_1g4p6")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="PeriquitoAustraliano" type="Node" parent="."]
@@ -170,14 +281,15 @@ script = ExtResource("1_qtkit")
 image = ExtResource("12_sddms")
 title = "Periquito-australiano"
 subtitle = "Melopsittacus undulatus"
-description = "O periquito-australiano foi trazido ao Brasil como animal de estimação e acabou se espalhando após fugas e solturas. Em áreas urbanas e rurais, pode competir por alimento e espaço com aves nativas, além de formar bandos que prejudicam plantações e chocam ninhos de outras espécies. Sua presença fora da Austrália tem aumentado em várias regiões do mundo, especialmente em cidades."
+description = "O periquito-australiano foi trazido ao redor do mundo (especialmente Brasil e Florida) como animal de estimação e acabou se espalhando após fugas e solturas. 
+Em áreas urbanas e rurais, pode competir por alimento e espaço com aves nativas, além de formar bandos que prejudicam plantações e chocam ninhos de outras espécies. Sua presença fora da Austrália tem aumentado em várias regiões do mundo, especialmente em cidades."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
+exotic_at = SubResource("Resource_cs8y0")
 native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
@@ -193,8 +305,8 @@ success_text = "Você retornou o animal exótico ao seu habitat natural!
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_lhcqu")
+native_at = SubResource("Resource_caad3")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="CoralSol" type="Node" parent="."]
@@ -209,8 +321,8 @@ success_text = "Você retornou o animal exótico ao seu habitat natural!
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_wl5om")
+native_at = SubResource("Resource_alybn")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="SapoCururu" type="Node" parent="."]
@@ -218,18 +330,18 @@ script = ExtResource("1_qtkit")
 image = ExtResource("14_ikgt4")
 title = "Sapo-cururu"
 subtitle = "Rhinella marina"
-description = "O sapo-cururu foi introduzido na Austrália e em outras regiões da Oceania na década de 1930 para combater insetos que atacavam plantações de cana-de-açúcar. Porém, tornou-se uma espécie invasora agressiva. É tóxico para predadores locais, se reproduz rapidamente e compete com espécies nativas por alimento e território. Sua expansão ameaça ecossistemas inteiros e dificulta o controle biológico natural."
+description = "O sapo-cururu, originário da América do Sul e Central, foi introduzido na Austrália e em outras regiões da Oceania na década de 1930 para combater insetos que atacavam plantações de cana-de-açúcar. Porém, tornou-se uma espécie invasora agressiva. É tóxico para predadores locais, se reproduz rapidamente e compete com espécies nativas por alimento e território. Sua expansão ameaça ecossistemas inteiros e dificulta o controle biológico natural."
 success_text = "Você retornou o animal exótico ao seu habitat natural!
 
 + 5 pontos"
 incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 
 -1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
+exotic_at = SubResource("Resource_reerm")
+native_at = SubResource("Resource_hqm7u")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
-[node name="LesmaEuropeia" type="Node" parent="."]
+[node name="p-LesmaEuropeia" type="Node" parent="."]
 script = ExtResource("1_qtkit")
 image = ExtResource("15_7y4f1")
 title = "Lesma-europeia"

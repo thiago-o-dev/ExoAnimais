@@ -36,7 +36,7 @@ func open_animal_data(data : AnimalData, is_return : bool = false, is_success : 
 		inventory_slots.deselect_all()
 		return
 	
-	animal_panel.set_animal_data(data, is_return)
+	animal_panel.set_animal_data(data, is_return, is_success)
 	animal_panel.show_animal_panel()
 
 func tween_to(object, variable_name : String, target, duration: float) -> Tween:

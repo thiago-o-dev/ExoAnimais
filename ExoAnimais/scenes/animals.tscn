@@ -1,11 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://dvudaajrjry6k"]
+[gd_scene load_steps=37 format=3 uid="uid://dvudaajrjry6k"]
 
 [ext_resource type="Script" uid="uid://bxi1010nrd5p6" path="res://src/animals_manager.gd" id="1_011m4"]
 [ext_resource type="Script" uid="uid://54b6j6uhcowo" path="res://src/animal_data.gd" id="1_qtkit"]
 [ext_resource type="Texture2D" uid="uid://cx8nsbdscjvhi" path="res://assets/animals/photos/javali_europeu_img.jpg" id="2_bc1kg"]
 [ext_resource type="Script" uid="uid://su5fjmlnij6b" path="res://src/position_pairs.gd" id="3_3f28n"]
 [ext_resource type="Texture2D" uid="uid://d2bun434qxjwk" path="res://assets/animals/photos/lagartixa_domestica_img.jpeg" id="4_cfsof"]
-[ext_resource type="Texture2D" uid="uid://cmtdy55mbgtky" path="res://assets/animals/photos/cabra.jpg" id="6_cnfq0"]
 [ext_resource type="Texture2D" uid="uid://cmu0xks0cotle" path="res://assets/animals/photos/mico-de-tufo-branco.jpg" id="7_ek86p"]
 [ext_resource type="Texture2D" uid="uid://c6qgtseuo72s8" path="res://assets/animals/photos/pombo-comum.jpg" id="8_q6uxa"]
 [ext_resource type="Texture2D" uid="uid://cxf4h7x4fv0n6" path="res://assets/animals/photos/aedes-aegypti.jpg" id="9_ek86p"]
@@ -15,11 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://d2gbfia8pcaic" path="res://assets/animals/photos/periquito_australiano.jpeg" id="12_sddms"]
 [ext_resource type="Texture2D" uid="uid://daiqvwydtpsic" path="res://assets/animals/photos/coral-sol.jpg" id="13_ml3ar"]
 [ext_resource type="Texture2D" uid="uid://ckbtcy1lnwxi" path="res://assets/animals/photos/sapo-cururu.jpg" id="14_ikgt4"]
-[ext_resource type="Texture2D" uid="uid://b5b600ny2crau" path="res://assets/animals/photos/lesma-europeia.jpg" id="15_7y4f1"]
-[ext_resource type="Texture2D" uid="uid://cflauobwg2pdv" path="res://assets/animals/photos/coelho-europeu.jpg" id="16_41dx5"]
-[ext_resource type="Texture2D" uid="uid://decxxm0fp5hjs" path="res://assets/animals/photos/ra-touro.jpg" id="17_06cr2"]
-[ext_resource type="Texture2D" uid="uid://chsrn1vpjco05" path="res://assets/animals/photos/carpa_comum.jpeg" id="18_1ved8"]
-[ext_resource type="Texture2D" uid="uid://bm8dojk2bqhxs" path="res://assets/animals/photos/esquilo-cinzento.jpeg" id="19_bty3e"]
 
 [sub_resource type="Resource" id="Resource_1jij0"]
 script = ExtResource("3_3f28n")
@@ -39,16 +33,6 @@ metadata/_custom_type_script = "uid://su5fjmlnij6b"
 [sub_resource type="Resource" id="Resource_y3n5f"]
 script = ExtResource("3_3f28n")
 ranges = Array[Vector2i]([Vector2i(61, 72), Vector2i(134, 143)])
-metadata/_custom_type_script = "uid://su5fjmlnij6b"
-
-[sub_resource type="Resource" id="Resource_mbmis"]
-script = ExtResource("3_3f28n")
-ranges = Array[Vector2i]([Vector2i(0, 33), Vector2i(174, 204)])
-metadata/_custom_type_script = "uid://su5fjmlnij6b"
-
-[sub_resource type="Resource" id="Resource_72xbc"]
-script = ExtResource("3_3f28n")
-ranges = Array[Vector2i]([Vector2i(42, 61), Vector2i(145, 163), Vector2i(84, 93), Vector2i(113, 123)])
 metadata/_custom_type_script = "uid://su5fjmlnij6b"
 
 [sub_resource type="Resource" id="Resource_633vk"]
@@ -176,23 +160,6 @@ incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 -1 ponto"
 exotic_at = SubResource("Resource_sddms")
 native_at = SubResource("Resource_y3n5f")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="e-Cabra" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("6_cnfq0")
-title = "Cabra"
-subtitle = "Capra hircus"
-description = "A cabra foi domesticada há milhares de anos e levada por humanos para várias partes do mundo. Em algumas ilhas, como Galápagos, Havaí e Madagascar, populações ferais se formaram após solturas e abandonos. Nessas regiões, elas causam degradação ambiental ao destruir vegetação nativa, competir com espécies locais e favorecer a erosão do solo.
-Competindo com espécies nativas de lagartixas, pode afetar o equilíbrio de insetos locais ao dominar o espaço urbano."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_mbmis")
-native_at = SubResource("Resource_72xbc")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"
 
 [node name="MicoDeTufoBranco" type="Node" parent="."]
@@ -339,100 +306,4 @@ incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
 -1 ponto"
 exotic_at = SubResource("Resource_reerm")
 native_at = SubResource("Resource_hqm7u")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="p-LesmaEuropeia" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("15_7y4f1")
-title = "Lesma-europeia"
-subtitle = "Arion vulgaris"
-description = "A lesma-europeia se espalhou para outros continentes através do transporte de plantas, solo e cargas agrícolas. Em áreas onde foi introduzida, compete com espécies nativas, devora plantações, hortas e mudas, além de transmitir parasitas que afetam animais e humanos. Sua reprodução rápida e resistência climática dificultam o controle."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="CoelhoEuropeu" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("16_41dx5")
-title = "Coelho-europeu"
-subtitle = "Oryctolagus cuniculus"
-description = "O coelho-europeu foi introduzido em vários países para caça, alimentação e ornamentação. Na Austrália, sua introdução no século XIX resultou em uma das maiores pragas ambientais da história: eles destruíram pastagens, prejudicaram plantações, causaram erosão do solo e competiram com espécies nativas. Em muitos locais, sua população cresceu tão rápido que foi necessário o uso de vírus e cercas biológicas para tentar controlar a expansão."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="RaTouroAmericana" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("17_06cr2")
-title = "Rã-touro-americana"
-subtitle = "Lithobates catesbeianus"
-description = "A rã-touro foi introduzida em vários países para criação comercial e alimentação. No Brasil, escapou de criadouros e se espalhou em ambientes naturais. Ela se alimenta de peixes, insetos, aves, pequenas serpentes e outros anfíbios, competindo com espécies nativas. Sua alta reprodução, resistência e ausência de predadores naturais tornam o controle difícil e o impacto ambiental elevado."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="CarpaComum" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("18_1ved8")
-title = "Carpa-comum"
-subtitle = "Cyprinus carpio"
-description = "A carpa-comum foi introduzida em vários países para pesca, aquicultura e ornamentação. No Brasil e em outras regiões, escapou para ambientes naturais e passou a competir com peixes nativos por alimento e espaço. Ela revolvem o fundo dos rios e lagos, aumenta a turbidez da água, destrói vegetação aquática e prejudica a reprodução de espécies locais. Sua resistência e adaptação tornam o controle complicado."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="EsquiloCinzento" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("19_bty3e")
-title = "Esquilo-cinzento"
-subtitle = "Sciurus carolinensis"
-description = "O esquilo-cinzento foi levado da América do Norte para a Europa como animal ornamental e de estimação. Acabou escapando ou sendo solto e se tornou invasor, competindo com espécies locais, como o esquilo-vermelho europeu. Ele destrói ninhos, devora ovos, descasca árvores e transmite doenças que afetam outras espécies. Sua expansão ameaça ecossistemas e biodiversidade nativa."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
-metadata/_custom_type_script = "uid://54b6j6uhcowo"
-
-[node name="JoaninhaAsiatica" type="Node" parent="."]
-script = ExtResource("1_qtkit")
-image = ExtResource("19_bty3e")
-title = "Joaninha-asiática"
-subtitle = "Harmonia axyridis"
-description = "A joaninha-asiática foi introduzida em vários países para controle de pragas agrícolas, mas se espalhou e passou a competir com espécies nativas de joaninhas. Onde se estabelece, pode reduzir a diversidade local, invadir casas e até predar outros insetos benéficos. No Brasil, já é encontrada em diferentes estados e pode causar desequilíbrios ecológicos."
-success_text = "Você retornou o animal exótico ao seu habitat natural!
-
-+ 5 pontos"
-incorrect_text = "Você retornou o animal exótico fora de sua fauna natural.
-
--1 ponto"
-exotic_at = SubResource("Resource_cfsof")
-native_at = SubResource("Resource_3f28n")
 metadata/_custom_type_script = "uid://54b6j6uhcowo"

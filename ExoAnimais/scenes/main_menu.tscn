@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://dcfc4g4dxtuby"]
+[gd_scene load_steps=3 format=3 uid="uid://dcfc4g4dxtuby"]
+
+[ext_resource type="Texture2D" uid="uid://3gnm2yhta7xp" path="res://assets/ui/Tabletop.svg" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://shsnto7nndn5" path="res://scenes/main_menu_ui.tscn" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Tabletop" type="Sprite2D" parent="."]
+position = Vector2(-7, -5)
+texture = ExtResource("1_l6cm7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.143, 0.143)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenuUi" parent="CanvasLayer" instance=ExtResource("2_ekxnf")]

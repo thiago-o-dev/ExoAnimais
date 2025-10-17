@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ExoAnimais"
-run/main_scene="res://scenes/tabletop.tscn"
+run/main_scene="uid://dcfc4g4dxtuby"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+globals="*res://globals.gd"
 
 [display]
 

@@ -419,7 +419,7 @@ texture = ExtResource("12_60mk0")
 
 [node name="PlayerComponent" type="Node2D" parent="." node_paths=PackedStringArray("active_players", "active_player_indicator", "camera")]
 script = ExtResource("8_b7h01")
-active_players = [NodePath("Players/TileCharacterBody2D"), NodePath("Players/TileCharacterBody2D2")]
+active_players = [NodePath("Players/TileCharacterBody2D"), NodePath("Players/TileCharacterBody2D2"), NodePath("Players/TileCharacterBody2D3"), NodePath("Players/TileCharacterBody2D4")]
 active_player_indicator = NodePath("ActivePlayerIndicator")
 camera = NodePath("TileCamera2D")
 
@@ -444,6 +444,16 @@ tile_path_component = NodePath("../../../TilePath2DComponent")
 
 [node name="TileCharacterBody2D2" parent="PlayerComponent/Players" node_paths=PackedStringArray("tile_path_component") instance=ExtResource("9_lup35")]
 modulate = Color(0.945496, 0.768132, 0.0268227, 1)
+position = Vector2(-374, 181)
+tile_path_component = NodePath("../../../TilePath2DComponent")
+
+[node name="TileCharacterBody2D3" parent="PlayerComponent/Players" node_paths=PackedStringArray("tile_path_component") instance=ExtResource("9_lup35")]
+modulate = Color(0.28260815, 0.9384105, 1, 1)
+position = Vector2(-374, 181)
+tile_path_component = NodePath("../../../TilePath2DComponent")
+
+[node name="TileCharacterBody2D4" parent="PlayerComponent/Players" node_paths=PackedStringArray("tile_path_component") instance=ExtResource("9_lup35")]
+modulate = Color(0.96501297, 0.75148785, 1, 1)
 position = Vector2(-374, 181)
 tile_path_component = NodePath("../../../TilePath2DComponent")
 

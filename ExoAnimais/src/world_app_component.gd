@@ -39,6 +39,7 @@ var movement_delay = 0.3
 var current_delay = 0
 
 func _ready():
+	player_quantity = globals.player_quantity
 	player_component.start_players(player_quantity)
 	ui_manager.dice_button.connect("pressed", Callable(self, "_on_dice_button_click"))
 	ui_manager.animated_dice_manager.on_proceed_clicked.connect(_selected_dice_movement)

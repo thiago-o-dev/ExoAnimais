@@ -19,7 +19,7 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_uas5y"]
 font_color = Color(0.3647059, 0.10980392, 0.05882353, 1)
 
-[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel", "animated_dice_manager", "dice_button", "end_turn_button", "ask_selection", "skip_selection", "confirm_selection", "ranking")]
+[node name="UI" type="Control" node_paths=PackedStringArray("inventory_slots", "animal_panel", "animated_dice_manager", "dice_button", "dice_button_canvas", "end_turn_button", "ask_selection", "skip_selection", "confirm_selection", "ranking")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,22 +28,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qk0o7")
 inventory_slots = NodePath("InventorySlots")
-animal_panel = NodePath("AnimalPanel")
+animal_panel = NodePath("Control/AnimalPanel")
 animated_dice_manager = NodePath("AnimatedDices")
-dice_button = NodePath("DiceButton")
+dice_button = NodePath("CanvasGroup/DiceButton")
+dice_button_canvas = NodePath("CanvasGroup")
 end_turn_button = NodePath("AdvanceTurn")
 ask_selection = NodePath("AskSelection")
 skip_selection = NodePath("AskSelection/Button")
 confirm_selection = NodePath("AskSelection/Button2")
 ranking = NodePath("Ranking")
 
-[node name="DiceButton" parent="." instance=ExtResource("2_oln55")]
-layout_mode = 1
-offset_left = -279.0
-offset_top = -265.0
-offset_right = -51.0
-offset_bottom = -43.0
-flat = false
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="DiceButton" parent="CanvasGroup" instance=ExtResource("2_oln55")]
+offset_left = 1257.0
+offset_top = 599.0
+offset_right = 1485.0
+offset_bottom = 821.0
 
 [node name="AdvanceTurn" type="Button" parent="."]
 layout_mode = 1
@@ -72,6 +73,7 @@ vertical_alignment = 1
 
 [node name="AskSelection" type="Panel" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,10 +155,24 @@ offset_right = 286.00006
 offset_bottom = 0.0
 ui_manager = NodePath("..")
 
-[node name="AnimalPanel" parent="." instance=ExtResource("4_uas5y")]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
-offset_left = 85.0
-offset_right = 493.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="AnimalPanel" parent="Control" instance=ExtResource("4_uas5y")]
+layout_mode = 1
+offset_left = 41.0
+offset_top = -263.0
+offset_right = 449.0
+offset_bottom = 285.0
+open_x_position = -559.0
+closed_x_position = 41.0
 
 [node name="AnimatedDices" parent="." instance=ExtResource("5_aw2gl")]
 visible = false

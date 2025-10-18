@@ -40,7 +40,7 @@ player_quantity = 2
 [node name="Tabletop" type="Sprite2D" parent="."]
 texture_filter = 2
 position = Vector2(-33, -25)
-scale = Vector2(0.125732, 0.125732)
+scale = Vector2(1.008, 1.008)
 texture = ExtResource("1_jctoq")
 
 [node name="TilePath2DComponent" type="Path2D" parent="." node_paths=PackedStringArray("base_line2d", "start_position", "end_position")]
@@ -310,6 +310,23 @@ scale = Vector2(1.1553469, 1.1553469)
 texture = ExtResource("12_60mk0")
 
 [node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees/TreesGreen3"]
+position = Vector2(-1214.7847, 728.872)
+texture = ExtResource("12_60mk0")
+
+[node name="Trees8" type="Node2D" parent="ObjectsManager/Forest"]
+position = Vector2(573, 240)
+
+[node name="TreesGreen3" type="Sprite2D" parent="ObjectsManager/Forest/Trees8"]
+position = Vector2(-28, -13)
+scale = Vector2(0.0164638, 0.0164638)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen2" type="Sprite2D" parent="ObjectsManager/Forest/Trees8/TreesGreen3"]
+position = Vector2(-2125.875, 0.00012207031)
+scale = Vector2(1.1553469, 1.1553469)
+texture = ExtResource("12_60mk0")
+
+[node name="TreesGreen" type="Sprite2D" parent="ObjectsManager/Forest/Trees8/TreesGreen3"]
 position = Vector2(-1214.7847, 728.872)
 texture = ExtResource("12_60mk0")
 

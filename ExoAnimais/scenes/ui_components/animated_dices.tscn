@@ -35,10 +35,18 @@ dices = [NodePath("Dices/Dice1"), NodePath("Dices/Dice2")]
 proceed_button = NodePath("Proceed")
 
 [node name="Dices" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 362.0
-offset_right = 1536.0
-offset_bottom = 490.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -64.0
+offset_right = 147.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="Dice1" type="Button" parent="Dices" node_paths=PackedStringArray("left_side", "left_side_dice", "right_side", "right_side_dice")]
@@ -223,9 +231,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -405.5
+offset_left = -405.0
 offset_top = 77.0
-offset_right = 405.5
+offset_right = 406.0
 offset_bottom = 141.0
 grow_horizontal = 2
 text = " Selecione 1 ou 2 dados para se locomover "

@@ -75,6 +75,7 @@ func _on_dice_button_click():
 	ui_manager.is_ui_frozen = true
 	
 	print("Dice button was clicked")
+	ui_manager.is_dice_button_used = true
 	ui_manager.roll_dices([-1, -1])
 	
 	ui_manager.animated_dice_manager.proceed_button.set_pressed_no_signal(false)
@@ -118,6 +119,7 @@ func _start_next_turn():
 	if game_end_reached and current_turn % player_quantity == 1:
 		_send_players_to_game_won_screen()
 	
+	ui_manager.is_dice_button_used = false
 	player_component.set_indicator_to_player(get_curr_player())
 	player_component._set_camera_to_follow_player(get_curr_player())
 	

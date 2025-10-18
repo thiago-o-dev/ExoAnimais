@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/hat_safari.svg-13fc4b6dec9a75768020814f9b5ad4
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

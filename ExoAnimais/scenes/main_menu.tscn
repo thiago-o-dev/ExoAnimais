@@ -5,12 +5,14 @@
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Tabletop" type="Sprite2D" parent="."]
-position = Vector2(-7, -5)
-texture = ExtResource("1_l6cm7")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.143, 0.143)
+
+[node name="Tabletop" type="Sprite2D" parent="."]
+modulate = Color(0.52906674, 0.5290667, 0.5290667, 1)
+position = Vector2(-7, -5)
+scale = Vector2(8, 8)
+texture = ExtResource("1_l6cm7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

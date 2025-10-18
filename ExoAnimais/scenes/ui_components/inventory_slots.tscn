@@ -21,7 +21,7 @@ slot_buttons = [NodePath("HBoxContainer/Button4"), NodePath("HBoxContainer/Butto
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.186, 0.186)
+scale = Vector2(0.372, 0.372)
 texture = ExtResource("1_joxd1")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

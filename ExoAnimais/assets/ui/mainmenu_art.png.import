@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4fyoe1e6shbv"
-path="res://.godot/imported/Tabletop.png-a9bd903713cae1c47ac2a645a32fbc09.ctex"
+uid="uid://2d6dw6s41d8i"
+path="res://.godot/imported/mainmenu_art.png-0f951dab3fbcae5330614f5b819f517e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Tabletop.png"
-dest_files=["res://.godot/imported/Tabletop.png-a9bd903713cae1c47ac2a645a32fbc09.ctex"]
+source_file="res://assets/ui/mainmenu_art.png"
+dest_files=["res://.godot/imported/mainmenu_art.png-0f951dab3fbcae5330614f5b819f517e.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

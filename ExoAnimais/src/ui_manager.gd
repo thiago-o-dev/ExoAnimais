@@ -6,11 +6,13 @@ class_name UIManager
 @export var animal_panel : AnimalPanel
 @export var animated_dice_manager : AnimatedDicesManager
 @export var dice_button : Button
+@export var dice_button_canvas : CanvasGroup
 @export var end_turn_button : Button
 @export var ask_selection : Panel
 @export var skip_selection : Button
 @export var confirm_selection : Button
 @export var ranking : Ranking
+var is_dice_button_used : bool = false
 
 @export_category("Configurations")
 @export var filled_inv_slots : int = 0
@@ -18,6 +20,7 @@ class_name UIManager
 
 func _ready():
 	filled_inv_slots = 0
+	
 
 func roll_dices(values : Array[int]):
 	animated_dice_manager.roll_dices(values)
@@ -53,7 +56,7 @@ func ask_selection_set_active(value : bool):
 	if value:
 		t = tween_to(ask_selection, "modulate:a", 1, 2)
 	else:
-		t = tween_to(ask_selection, "modulate:a", 0, 2)
+		t = tween_to(ask_selection, "modulate:a", 0, 1)
 
 	t.finished.connect(ask_selection_set_visible.bind(value))
 	
@@ -73,6 +76,12 @@ func set_inventory(datas : Array[AnimalData], is_full_refresh : bool = false):
 	print("this is the fill: ",filled_inv_slots)
 	inventory_slots.set_all_slots(datas)
 
+func update_dice_button_appearance():
+	if is_dice_button_used:
+		dice_button_canvas.self_modulate.a = .5
+	else:
+		dice_button_canvas.self_modulate.a = 1
+
 func _process(_delta):
 	is_ui_frozen = false
 	
@@ -80,3 +89,4 @@ func _process(_delta):
 		is_ui_frozen = true
 	
 	inventory_slots.filled_inv_slots = filled_inv_slots
+	update_dice_button_appearance()

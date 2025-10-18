@@ -76,6 +76,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var window_size = DisplayServer.window_get_size()
+	
 	var desired_position = closed_x_position
 	
 	if _is_opened:
